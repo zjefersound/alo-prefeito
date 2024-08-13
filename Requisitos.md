@@ -1,71 +1,36 @@
-# Requisitos Funcionais
-Cadastro de Usuários:
+## Requisitos Funcionais
 
-Permitir que cidadãos criem contas usando e-mail, número de telefone ou integração com redes sociais.
-Autenticação de usuários através de login e senha.
-Relato de Problemas:
+1. **Relato de Problemas Urbanos**
+   - Permitir que os cidadãos registrem problemas urbanos por meio de texto, fotos, vídeos e localização geográfica.
+   - Categorizar problemas em diferentes tipos (ex.: lixo, infraestrutura, iluminação pública).
 
-Permitir que os usuários relatem problemas urbanos, como buracos na estrada, iluminação pública, lixo acumulado, entre outros.
-Captura de localização geográfica (GPS) para identificar onde o problema foi relatado.
-Permitir o upload de fotos e vídeos para complementar o relato.
-Classificação e Categorização de Problemas:
+2. **Divulgação de Informações**
+   - Página de nóticias que exibe os problemas relatados, incluindo status e localização.
+   - API para que a mídia acesse relatórios e dados em tempo real.
 
-Permitir que os usuários classifiquem os problemas por tipo (ex: infraestrutura, segurança, meio ambiente).
-Atribuição automática de categorias baseadas em palavras-chave no relato.
-Acompanhamento de Relatos:
+3. **Integração com Redes Sociais**
+   - Opção de gerar link para os cidadãos compartilharem seus relatos em redes sociais.
 
-Permitir que os usuários acompanhem o status dos problemas relatados (ex: "Recebido", "Em análise", "Em andamento", "Resolvido").
-Notificações push para informar os usuários sobre mudanças de status.
-Divulgação em Redes Sociais:
+4. **Geração de Relatórios**
+   - Relatórios detalhados sobre tipos de problemas, áreas mais afetadas, tempo de resolução, entre outros, para autoridades e mídia.
 
-Integração com redes sociais para compartilhar problemas e atualizações diretamente nos perfis oficiais.
-Gerar posts automáticos com estatísticas e informações relevantes periodicamente.
-Visualização de Dados Públicos:
+## Requisitos Não Funcionais
 
-Exibir um mapa interativo com os problemas relatados na cidade.
-Oferecer filtros para busca por tipo de problema, status, data, etc.
-Exibir gráficos e estatísticas sobre os problemas urbanos.
-API para Mídia:
+1. **Escalabilidade**
+   - O sistema deve ser capaz de escalar para atender a diferentes regiões e um número crescente de usuários.
 
-Disponibilizar uma API para que veículos de comunicação possam acessar os dados em tempo real.
-Implementar diferentes níveis de acesso à API, incluindo uma versão paga com mais funcionalidades e dados mais detalhados.
-Sistema de Feedback:
+2. **Segurança**
+   - Proteção contra acessos não autorizados, ataques de spam e manipulação de dados.
+   - Garantia da privacidade dos dados dos usuários, conforme a LGPD.
 
-Permitir que os usuários avaliem a resolução dos problemas relatados.
-Coletar sugestões dos usuários para melhoria do aplicativo.
+3. **Desempenho**
+   - O sistema deve ser capaz de lidar com múltiplos acessos simultâneos sem degradação significativa de performance.
+   - Respostas rápidas às interações do usuário, especialmente na coleta e exibição de dados.
 
-# Requisitos Não Funcionais
-Segurança:
+4. **Usabilidade**
+   - Interface amigável e intuitiva, acessível para pessoas com diferentes níveis de familiaridade com tecnologia.
+   - Design responsivo para uso em diferentes dispositivos (smartphones, tablets, desktops).
 
-Implementar criptografia para proteger os dados dos usuários.
-Autenticação multifator (MFA) para acessar a API paga.
-Garantir a conformidade com a LGPD (Lei Geral de Proteção de Dados).
-Desempenho:
-
-O sistema deve ser capaz de lidar com um grande número de usuários simultâneos sem degradação de desempenho.
-Tempo de resposta da API inferior a 1 segundo em 95% das requisições.
-Escalabilidade:
-
-A arquitetura deve suportar o crescimento do número de usuários e do volume de dados ao longo do tempo.
-Implementar uma infraestrutura em nuvem que permita o escalonamento automático de recursos.
-Disponibilidade:
-
-O sistema deve estar disponível 99,9% do tempo.
-Implementar redundância de servidores e backups regulares para minimizar tempo de inatividade.
-Usabilidade:
-
-Interface intuitiva e fácil de usar, acessível a todos os perfis de usuários.
-Design responsivo que se adapta a diferentes dispositivos, como smartphones, tablets e desktops.
-Manutenibilidade:
-
-Código bem documentado para facilitar futuras manutenções e atualizações.
-Arquitetura modular que permita a adição de novas funcionalidades sem impacto significativo nas existentes.
-Confiabilidade:
-
-Garantir que os dados relatados sejam consistentes e não corrompidos.
-Sistema de auditoria para rastrear todas as alterações feitas nos dados.
-Compliance:
-
-Garantir conformidade com leis e regulamentos locais sobre coleta e divulgação de dados.
-Implementar termos de uso e política de privacidade clara para os usuários.
-Esses requisitos cobrem os aspectos essenciais do sistema, garantindo tanto a funcionalidade quanto a robustez do aplicativo.
+5. **Manutenibilidade**
+   - Estrutura de código organizada e bem documentada para facilitar futuras manutenções e atualizações.
+   - Modularidade para permitir a adição de novas funcionalidades com o mínimo impacto no sistema existente.
