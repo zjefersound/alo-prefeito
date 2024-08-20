@@ -1,0 +1,16 @@
+[Usuário]-(Registrar Problema Urbano)
+[Usuário]-(Visualizar Problemas)
+[Usuário]-(Compartilhar Problema em Redes Sociais)
+[Usuário]-(Gerar Relatórios Básicos)
+[Usuário]-(Acompanhar Status do Problema)
+
+[Administrador]-(Gerar Relatórios Avançados)
+[Administrador]-(Gerenciar Problemas)
+[Administrador]-(Visualizar Estatísticas de Uso)
+[Administrador]-(Gerenciar Usuários)
+[Administrador]-(Registrar Aplicações Terceiras)
+
+[Mídia]-(Acessar Relatórios via API)
+
+[Aplicação Terceira]-(Gerar Tokens de Acesso)
+[Aplicação Terceira]-(Acessar Dados via API)
