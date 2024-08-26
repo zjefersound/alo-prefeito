@@ -32,3 +32,8 @@
 
 
 ### Tecnologias
+
+- Typescript
+- React
+- NodeJs
+- MySql
