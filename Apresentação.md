@@ -18,6 +18,9 @@
 ### Mídia
 ![image](https://github.com/user-attachments/assets/67c88eab-de7f-4ff4-988a-3fba27fc0f91)
 
+https://portalrbv.com.br/defesa-civil-alerta-para-risco-alto-de-deslizamentos/
+![image](https://github.com/user-attachments/assets/8604a1b9-bbc0-4547-808b-bf976c8da2d2)
+
 ### Regras de negócio
 ![image](https://github.com/user-attachments/assets/3d3a65b9-8e92-4319-9bb8-7d7edfd11175)
 
