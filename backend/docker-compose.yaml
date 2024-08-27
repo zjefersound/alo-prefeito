@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:8.4.1
+    container_name: fala-cidade-mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=falacidade
+    ports:
+      - '3306:3306'
+    volumes:
+      - database:/var/lib/mysql
+volumes:
+  database:
