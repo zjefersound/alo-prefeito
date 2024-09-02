@@ -3,10 +3,12 @@ import { Body, ConflictException, Controller, Post } from '@nestjs/common'
 import { z } from 'zod'
 import { ZodValidationPipe } from '../pipes/zod-validation.pipe'
 import { hash } from 'bcryptjs'
+import { emailSchema } from '../schemas/email-schema'
+import { passwordSchema } from '../schemas/password-schema'
 
 const bodySchema = z.object({
-  email: z.string().email().min(1).max(255),
-  password: z.string().min(8).max(255),
+  email: emailSchema,
+  password: passwordSchema,
   name: z.string().min(1).max(255),
   cpf: z.string().min(14).max(14),
   phone: z.string().min(11).max(11),
