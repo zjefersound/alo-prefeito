@@ -6,6 +6,7 @@ import { compare } from 'bcryptjs'
 import { emailSchema } from '../schemas/email-schema'
 import { passwordSchema } from '../schemas/password-schema'
 import { JwtService } from '@nestjs/jwt'
+import { Public } from '@/auth/decorators/public.decorator'
 
 const bodySchema = z.object({
   email: emailSchema,
@@ -16,6 +17,7 @@ const bodyValidationPipe = new ZodValidationPipe(bodySchema)
 
 type BodySchema = z.infer<typeof bodySchema>
 
+@Public()
 @Controller()
 export class AuthenticateUserController {
   constructor(

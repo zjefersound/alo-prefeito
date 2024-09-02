@@ -5,6 +5,7 @@ import { ZodValidationPipe } from '../pipes/zod-validation.pipe'
 import { hash } from 'bcryptjs'
 import { emailSchema } from '../schemas/email-schema'
 import { passwordSchema } from '../schemas/password-schema'
+import { Public } from '@/auth/decorators/public.decorator'
 
 const bodySchema = z.object({
   email: emailSchema,
@@ -19,6 +20,7 @@ const bodyValidationPipe = new ZodValidationPipe(bodySchema)
 
 type BodySchema = z.infer<typeof bodySchema>
 
+@Public()
 @Controller()
 export class RegisterUserController {
   constructor(private prisma: PrismaService) {}
