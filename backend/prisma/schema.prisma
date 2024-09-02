@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CITIZEN
+  API
+  BACKOFFICE
+}
+
+model User {
+  id           String   @id @default(uuid(7))
+  email        String   @unique
+  passwordHash String   @unique @map("password_hash")
+  name         String
+  cpf          String   @unique
+  phone        String   @unique
+  createdAt    DateTime @default(now()) @map("created_at")
+  role         Role
+
+  incidents Incident[]
+
+  @@map("users")
+}
+
+model Category {
+  id        String   @id @default(uuid(7))
+  name      String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+
+  incidents Incident[]
+
+  @@map("categories")
+}
+
+model Incident {
+  id          String   @id @default(uuid(7))
+  title       String
+  description String
+  latitude    Int
+  longitude   Int
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  categoryId String @map("category_id")
+  authorId   String @map("author_id")
+
+  category    Category     @relation(fields: [categoryId], references: [id])
+  author      User         @relation(fields: [authorId], references: [id])
+  attachments Attachment[]
+
+  @@map("incidents")
+}
+
+model Attachment {
+  id        String   @id @default(uuid(7))
+  url       String
+  type      String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  incidentId String @map("incident_id")
+
+  incident Incident @relation(fields: [incidentId], references: [id])
+}
