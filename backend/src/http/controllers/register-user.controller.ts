@@ -21,7 +21,7 @@ const bodyValidationPipe = new ZodValidationPipe(bodySchema)
 type BodySchema = z.infer<typeof bodySchema>
 
 @Public()
-@Controller()
+@Controller('/users')
 export class RegisterUserController {
   constructor(private prisma: PrismaService) {}
 

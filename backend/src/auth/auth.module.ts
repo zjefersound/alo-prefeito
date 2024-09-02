@@ -21,11 +21,11 @@ import { APP_GUARD } from '@nestjs/core'
         const secret = envService.get('JWT_SECRET')
 
         return {
+          secret,
           signOptions: {
             algorithm: 'HS256',
             expiresIn: '1d',
           },
-          secret,
         }
       },
     }),

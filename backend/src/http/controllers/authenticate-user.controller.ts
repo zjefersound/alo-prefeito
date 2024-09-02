@@ -18,7 +18,7 @@ const bodyValidationPipe = new ZodValidationPipe(bodySchema)
 type BodySchema = z.infer<typeof bodySchema>
 
 @Public()
-@Controller()
+@Controller('/sessions')
 export class AuthenticateUserController {
   constructor(
     private prisma: PrismaService,
@@ -47,17 +47,14 @@ export class AuthenticateUserController {
       throw new BadRequestException(invalidCredentialsMessage)
     }
 
-    const userId = user.id
-
     const jwtPayload = {
-      sub: userId,
+      sub: user.id,
     }
 
-    const accessToken = this.jwt.sign(JSON.stringify(jwtPayload))
+    const accessToken = await this.jwt.signAsync(jwtPayload)
 
     return {
       accessToken,
-      userId,
     }
   }
 }
