@@ -21,7 +21,7 @@ model User {
   cpf          String   @unique
   phone        String   @unique
   createdAt    DateTime @default(now()) @map("created_at")
-  role         Role
+  role         Role     @default(CITIZEN)
 
   incidents Incident[]
 
