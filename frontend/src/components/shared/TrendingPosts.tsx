@@ -39,7 +39,7 @@ export function TrendingPosts({ posts }: TrendingPostsProps) {
                   {post.title}
                 </p>
                 <div className="flex space-x-3 mt-2">
-                  <span className="text-xs text-amber-100 tracking-wider font-bold mr-auto truncate">
+                  <span className="text-xs text-orange-300 tracking-wider font-bold mr-auto truncate">
                     {post.category.name}
                   </span>
                   <Text asChild>

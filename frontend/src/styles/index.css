@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --amber-50: #fffbeb;
-  --amber-100: #fef3c7;
-  --amber-200: #fde68a;
+  --orange-200: #fffbeb;
+  --orange-300: #fef3c7;
+  --orange-400: #fde68a;
 
   --agorium-50: #f8fbfc;
   --agorium-100: #f1f6f9;

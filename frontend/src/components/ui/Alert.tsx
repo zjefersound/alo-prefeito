@@ -29,11 +29,11 @@ export function Alert({ color = "info", className, children }: Props) {
         {
           "bg-emerald-100 text-emerald-600 shadow-emerald-700 hover:shadow-emerald-700  focus:shadow-emerald-700":
             color === "success",
-          "bg-red-100 text-red-600 shadow-red-700 hover:shadow-red-700  focus:shadow-red-700":
+          "bg-red-100 text-red-400 shadow-red-700 hover:shadow-red-700  focus:shadow-red-700":
             color === "error",
           "bg-blue-100 text-blue-600 shadow-blue-700 hover:shadow-blue-700  focus:shadow-blue-700":
             color === "info",
-          "bg-amber-100 text-amber-600 shadow-amber-700 hover:shadow-amber-700  focus:shadow-amber-700":
+          "bg-orange-300 text-amber-600 shadow-amber-700 hover:shadow-amber-700  focus:shadow-amber-700":
             color === "warning",
         }
       )}
@@ -41,7 +41,7 @@ export function Alert({ color = "info", className, children }: Props) {
       <Icon
         className={clsx("h-6 w-6 mr-2 shrink-0", {
           "text-emerald-600": color === "success",
-          "text-red-600": color === "error",
+          "text-red-400": color === "error",
           "text-blue-500": color === "info",
           "text-amber-500": color === "warning",
         })}

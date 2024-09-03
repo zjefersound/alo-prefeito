@@ -52,7 +52,7 @@ export function LoginForm() {
       ))}
       <Link
         to="/forgot-password"
-        className="text-amber-100 text-xs font-semibold ml-auto"
+        className="text-orange-300 text-xs font-semibold ml-auto"
       >
         Forgot password
       </Link>

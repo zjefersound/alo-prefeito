@@ -1,17 +1,17 @@
 .dark-editor {
-  --accentBase: var(--amber-100);
-  --accentBgSubtle: var(--amber-200);
-  --accentBg: var(--amber-200);
-  --accentBgHover: var(--amber-50);
+  --accentBase: var(--orange-300);
+  --accentBgSubtle: var(--orange-400);
+  --accentBg: var(--orange-400);
+  --accentBgHover: var(--orange-200);
   --accentBgActive: #fffbeb66;
-  --accentLine: var(--amber-200);
+  --accentLine: var(--orange-400);
 
-  --accentBorder: var(--amber-200);
-  --accentBorderHover: var(--amber-100);
-  --accentSolid: var(--amber-100);
-  --accentSolidHover: var(--amber-100);
+  --accentBorder: var(--orange-400);
+  --accentBorderHover: var(--orange-300);
+  --accentSolid: var(--orange-300);
+  --accentSolidHover: var(--orange-300);
   --accentText: var(--agorium-50);
-  --accentTextContrast: var(--amber-100);
+  --accentTextContrast: var(--orange-300);
 
   --baseBase: var(--agorium-800);
   --baseBgSubtle: var(--agorium-700);
@@ -66,7 +66,7 @@
 
 .dark-editor form button[type="submit"] {
   color: var(--agorium-900);
-  background: var(--amber-100);
+  background: var(--orange-300);
 }
 
 .dark-editor form button[type="submit"]:hover {
@@ -74,11 +74,11 @@
 }
 
 .dark-editor form button[type="submit"]:active {
-  background: var(--amber-50);
+  background: var(--orange-200);
 }
 
 .dark-editor form button[type="reset"] {
-  color: var(--amber-100);
+  color: var(--orange-300);
   background: var(--agorium-700);
   border: 1px solid var(--agorium-600);
 }

@@ -32,7 +32,7 @@ export function SimpleUserCard({
           {username}
         </p>
       </Text>
-      <p className="text-amber-100 flex items-center text-xl font-bold mt-2">
+      <p className="text-orange-300 flex items-center text-xl font-bold mt-2">
         <LuAward className="size-6 mr-1" />
         {formatOrdinals(rankingPosition)}
       </p>

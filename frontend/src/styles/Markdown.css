@@ -44,7 +44,7 @@
 }
 
 .markdown a {
-  color: var(--amber-100);
+  color: var(--orange-300);
   text-decoration: underline;
 }
 
@@ -60,7 +60,7 @@
 
 .markdown u {
   text-decoration: underline;
-  color: var(--amber-100);
+  color: var(--orange-300);
 }
 
 .markdown blockquote {
@@ -75,7 +75,7 @@
 .markdown code,
 .markdown code * {
   background-color: #282a36;
-  color: var(--amber-50);
+  color: var(--orange-200);
   padding: 2px 4px;
   border-radius: 4px;
   font-family: monospace, "Courier New", Courier;
@@ -85,7 +85,7 @@
   background-color: #282a36;
   color: #f8f8f2;
   border: 1px solid var(--agorium-700);
-  color: var(--amber-50);
+  color: var(--orange-200);
   padding: 16px;
   border-radius: 8px;
   overflow-x: auto;

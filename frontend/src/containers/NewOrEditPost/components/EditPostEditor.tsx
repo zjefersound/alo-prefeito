@@ -11,7 +11,7 @@ export function EditPostEditor() {
       <div className="flex items-center">
         <GoBack to="/" hideText />
         <Heading size="lg" asChild>
-          <h2 className="text-amber-100 ml-3">Edit post</h2>
+          <h2 className="text-orange-300 ml-3">Edit post</h2>
         </Heading>
       </div>
       <FieldError message={errors["content"]} />

@@ -27,7 +27,7 @@ export function PostCard({ post }: PostCardProps) {
           </Markdown>
         </div>
         <footer className="flex items-center flex-1">
-          <span className="text-amber-100 font-semibold text-sm">
+          <span className="text-orange-300 font-semibold text-sm">
             {post.category.name}
           </span>
           <ul className="flex space-x-3 ml-3 flex-1 overflow-x-auto overflow-y-hidden">

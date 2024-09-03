@@ -95,7 +95,7 @@ export function Post() {
             )}
           </header>
           <div>
-            <span className="text-amber-100 font-semibold text-sm">
+            <span className="text-orange-300 font-semibold text-sm">
               {post.category.name}
             </span>
             <Heading size="xs" asChild>
@@ -130,7 +130,7 @@ export function Post() {
         </span>
         {!post.comments?.length && (
           <Empty>
-            <p className="to-amber-100 font-bold mb-3 text-center">
+            <p className="to-orange-300 font-bold mb-3 text-center">
               No comments were found
             </p>
             <Text asChild>

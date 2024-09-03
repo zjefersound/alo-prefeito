@@ -23,7 +23,7 @@ function RadioGroupRoot({
     <RadioGroupPrimitive.Root
       className={clsx("space-y-2", className, {
         "opacity-50 [&>*>*]:cursor-not-allowed": props.disabled,
-        "[&>*>*]:ring-red-600 first:[&>*>*]:ring-1": borderColor === "danger",
+        "[&>*>*]:ring-red-400 first:[&>*>*]:ring-1": borderColor === "danger",
         "[&>*>*]:ring-emerald-600 first:[&>*>*]:ring-1": borderColor === "success",
       })}
       {...props}

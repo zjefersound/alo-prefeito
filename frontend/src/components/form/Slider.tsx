@@ -36,7 +36,7 @@ export function Slider({
         [`w-[${width}]`]: width,
         "w-80": !width && orientation === "horizontal",
         "opacity-50 [&>*>*]:cursor-not-allowed": props.disabled,
-        "[&>*>*]:ring-red-600 first:[&>*>*]:ring-1": borderColor === "danger",
+        "[&>*>*]:ring-red-400 first:[&>*>*]:ring-1": borderColor === "danger",
         "[&>*>*]:ring-emerald-600 first:[&>*>*]:ring-1": borderColor === "success",
       })}
       aria-required={required}

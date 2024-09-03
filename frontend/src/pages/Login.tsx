@@ -19,7 +19,7 @@ export function Login() {
             <span className="block text-center">
               No account?
               <Link to="/signup">
-                <span className="text-amber-100 font-bold"> Sign up</span>
+                <span className="text-orange-300 font-bold"> Sign up</span>
               </Link>
             </span>
           </Text>

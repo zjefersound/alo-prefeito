@@ -22,7 +22,7 @@ export function Checkbox({
       className={clsx("size-6 rounded shrink-0 ring-1", className, {
         "opacity-50 cursor-not-allowed": props.disabled,
         "ring-agorium-700": !borderColor,
-        "ring-red-600": borderColor === "danger",
+        "ring-red-400": borderColor === "danger",
         "ring-emerald-600": borderColor === "success",
       })}
       onClick={onChange}
@@ -31,7 +31,7 @@ export function Checkbox({
       <CheckboxPrimitive.CheckboxIndicator>
         <MdCheck
           className={clsx("size-6 rounded p-[3px]", {
-            "bg-amber-50 hover:bg-amber-100 active:bg-amber-200 text-agorium-900":
+            "bg-orange-200 hover:bg-orange-300 active:bg-orange-400 text-agorium-900":
               color === "primary",
             "bg-agorium-400 hover:bg-agorium-300 active:bg-agorium-200 text-agorium-900":
               color === "secondary",
@@ -39,7 +39,7 @@ export function Checkbox({
               color === "tertiary",
             "bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-agorium-900":
               color === "success",
-            "bg-red-600 hover:bg-red-700 active:bg-red-800 text-agorium-900":
+            "bg-red-400 hover:bg-red-700 active:bg-red-800 text-agorium-900":
               color === "danger",
             "bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-agorium-900":
               color === "info",

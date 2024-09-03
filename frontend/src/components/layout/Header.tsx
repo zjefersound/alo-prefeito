@@ -47,7 +47,7 @@ export function Header() {
           <Avatar name={user!.fullName} url={user!.avatar} />
           <p
             title={user!.fullName}
-            className="hidden md:flex flex-1 font-serif text-amber-100 max-w-52 truncate"
+            className="hidden md:flex flex-1 font-serif text-orange-300 max-w-52 truncate"
           >
             {printFirstAndLastName(user!.fullName)}
           </p>

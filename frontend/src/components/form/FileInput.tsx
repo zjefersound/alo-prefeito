@@ -56,7 +56,7 @@ function FileInputDropzone({
         "relative focus-within:ring-2 rounded-md overflow-hidden max-w-full",
         {
           "focus-within:ring-agorium-400": !borderColor,
-          "[&>*>*]:border-red-600": borderColor === "danger",
+          "[&>*>*]:border-red-400": borderColor === "danger",
           "[&>*>*]:border-emerald-600": borderColor === "success",
         },
         className,
@@ -221,7 +221,7 @@ function FileInputList({
             type="button"
             className={clsx(
               "size-6 rounded-full flex items-center justify-center",
-              "text-red-600 hover:bg-red-100 active:text-red-700",
+              "text-red-400 hover:bg-red-100 active:text-red-700",
             )}
             aria-label="Remove file"
             onClick={() => handleFileRemove(file)}

@@ -2,10 +2,10 @@ import { Logo } from "./Logo";
 
 export function LogoHorizontal() {
   return (
-    <div className="flex">
+    <div className="flex items-center">
       <Logo />
-      <p className="font-serif font-bold text-[2rem] text-amber-100 ml-6">
-        Agorium
+      <p className="font-serif font-bold text-[2rem]  ml-6">
+        Fala <span className="text-orange-300">cidade</span>
       </p>
     </div>
   );

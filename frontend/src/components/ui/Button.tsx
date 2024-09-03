@@ -57,9 +57,9 @@ export const Button = forwardRef(
           {
             "h-10 px-4": size === "md",
             "h-8 px-3": size === "sm",
-            "bg-amber-100 hover:opacity-90 active:bg-amber-50 text-agorium-900":
+            "bg-orange-300 hover:opacity-90 active:bg-orange-200 text-agorium-900":
               color === "primary",
-            "bg-agorium-700 hover:bg-agorium-600 active:bg-agorium-500 text-amber-100 ring-agorium-600 ring-1":
+            "bg-agorium-700 hover:bg-agorium-600 active:bg-agorium-500 text-orange-300 ring-agorium-600 ring-1":
               color === "secondary",
             "bg-emerald-400 hover:bg-emerald-500 active:bg-emerald-600 text-agorium-900":
               color === "success",

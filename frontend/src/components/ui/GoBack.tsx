@@ -18,7 +18,7 @@ export function GoBack({ to, hideText }: GoBackProps) {
         },
       )}
     >
-      <MdArrowBack className="size-6 text-amber-100" />
+      <MdArrowBack className="size-6 text-orange-300" />
       {!hideText && (
         <span className="text-agorium-400 ml-3 text-sm tracking-wider whitespace-nowrap">
           Go Back

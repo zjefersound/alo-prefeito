@@ -7,7 +7,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Inter", "ui-sans-serif", "system-ui"],
-      serif: ["Vollkorn SC"]
+      serif: ["Homenaje"]
     },
     extend: {
       colors: {

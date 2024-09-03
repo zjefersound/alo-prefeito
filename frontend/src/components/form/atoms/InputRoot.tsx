@@ -28,7 +28,7 @@ export const InputRoot = React.forwardRef(
       `,
           {
             "ring-agorium-600": !borderColor,
-            "ring-red-600": borderColor === "danger",
+            "ring-red-400": borderColor === "danger",
             "ring-emerald-600": borderColor === "success",
           },
           className

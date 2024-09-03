@@ -162,7 +162,7 @@ export const EditPostProvider = ({ children }: EditPostProviderProps) => {
       )}
       {!loadingPost && !post && (
         <Empty>
-          <p className="to-amber-100 font-bold mb-3 text-center">
+          <p className="to-orange-300 font-bold mb-3 text-center">
             Post not found
           </p>
           <Text asChild>
