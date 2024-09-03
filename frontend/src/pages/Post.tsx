@@ -76,7 +76,7 @@ export function Post() {
               </Text>
             </div>
             {isAuthor && (
-              <Link to={`/post/${post.id}/edit`} className="ml-auto">
+              <Link to={`/incident/${post.id}/edit`} className="ml-auto">
                 <Button color="secondary" size="sm">
                   <MdOutlineEdit className="size-5 mr-2" />
                   Edit

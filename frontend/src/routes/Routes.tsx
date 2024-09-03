@@ -32,15 +32,15 @@ const routes: { [key: string]: RouteObject[] } = {
       element: <Categories />,
     },
     {
-      path: "/new-post",
+      path: "/new-incident",
       element: <NewPost />,
     },
     {
-      path: "/post/:id",
+      path: "/incident/:id",
       element: <Post />,
     },
     {
-      path: "/post/:id/edit",
+      path: "/incident/:id/edit",
       element: <EditPost />,
     },
     {
