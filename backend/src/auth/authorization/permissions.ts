@@ -10,21 +10,23 @@ type PermissionsByRole = (
 
 export const permissions: Record<Role, PermissionsByRole> = {
   BACKOFFICE(_, { can }) {
+    can('get', 'user')
     can('manage', 'category')
     can('delete', 'incident')
     can('fetch', 'incident')
   },
   API(_, { can }) {
+    can('get', 'user')
     can('fetch', 'incident')
   },
   CITIZEN(user, { can }) {
+    can('get', 'user')
     can('register', 'incident')
+    can('fetch', 'incident')
     can('fetch', 'category')
 
     can('delete', 'incident', {
       authorId: { $eq: user.id },
     })
-
-    can('fetch', 'incident')
   },
 }
