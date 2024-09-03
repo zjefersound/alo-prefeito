@@ -64,9 +64,9 @@ export function Post() {
         <GoBack to="/" />
         <Card className="space-y-6">
           <header className="flex">
-            <Avatar name={post.user.name} url={post.user.avatar} />
+            <Avatar name={post.user.name} />
             <div className="flex flex-col ml-4">
-              <span>{post.user.username}</span>
+              <span>{post.user.email}</span>
               <Text size="sm" asChild>
                 <span className="tracking-wider">
                   {formatDistance(new Date(post.createdAt), new Date(), {
@@ -135,6 +135,7 @@ export function Post() {
       <Content.Sidebar>
         <SimpleUserCard
           name={post.user.name}
+          email={post.user.email}
           rankingPosition={12}
           totalPosts={32}
           totalUpvotes={642123}

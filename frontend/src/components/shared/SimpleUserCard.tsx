@@ -7,7 +7,7 @@ import { formatOrdinals } from "../../utils/formatOrdinals";
 
 interface SimpleUserCardProps {
   name: string;
-  username: string;
+  email: string;
   totalUpvotes: number;
   totalPosts: number;
   rankingPosition: number;
@@ -17,7 +17,7 @@ export function SimpleUserCard({
   name,
   totalPosts,
   totalUpvotes,
-  username,
+  email,
   rankingPosition,
   url,
 }: SimpleUserCardProps) {
@@ -27,9 +27,9 @@ export function SimpleUserCard({
       <Text asChild size="xl">
         <p
           className="mt-6 font-bold text-agorium-50 text-center truncate w-full"
-          title={username}
+          title={email}
         >
-          {username}
+          {email}
         </p>
       </Text>
       <p className="text-orange-300 flex items-center text-xl font-bold mt-2">
