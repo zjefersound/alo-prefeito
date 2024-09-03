@@ -40,7 +40,7 @@ export class AuthorizationGuard implements CanActivate {
 
     const { can } = getUserPermissions(userId, role)
 
-    if (role === 'CITIZEN' && subject === 'incident') {
+    if (role === 'CITIZEN' && subject === 'incident' && action !== 'register') {
       const { incidentId } = request.params
 
       const incident = await this.prisma.incident.findUnique({

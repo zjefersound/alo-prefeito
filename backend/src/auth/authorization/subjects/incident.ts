@@ -4,7 +4,7 @@ import { incidentSchema } from '../models/incident'
 export const incidentSubject = z.tuple([
   z.union([
     z.literal('manage'),
-    z.literal('create'),
+    z.literal('register'),
     z.literal('fetch'),
     z.literal('delete'),
   ]),

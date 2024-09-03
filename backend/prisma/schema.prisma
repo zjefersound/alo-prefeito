@@ -39,12 +39,12 @@ model Category {
 }
 
 model Incident {
-  id          String   @id @default(uuid(7))
-  title       String
-  description String
-  latitude    Int
-  longitude   Int
-  createdAt   DateTime @default(now()) @map("created_at")
+  id        String   @id @default(uuid(7))
+  title     String
+  content   String
+  latitude  Float
+  longitude Float
+  createdAt DateTime @default(now()) @map("created_at")
 
   categoryId String @map("category_id")
   authorId   String @map("author_id")

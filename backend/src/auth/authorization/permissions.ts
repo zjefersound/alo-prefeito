@@ -18,7 +18,7 @@ export const permissions: Record<Role, PermissionsByRole> = {
     can('fetch', 'incident')
   },
   CITIZEN(user, { can }) {
-    can('create', 'incident')
+    can('register', 'incident')
     can('fetch', 'category')
 
     can('delete', 'incident', {
