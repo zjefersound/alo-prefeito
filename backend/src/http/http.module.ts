@@ -7,6 +7,7 @@ import { FetchCategoriesController } from './controllers/fetch-categories.contro
 import { RegisterIncidentController } from './controllers/register-incident.controller'
 import { DeleteIncidenController } from './controllers/delete-incident.controller'
 import { FetchAllIncidentsController } from './controllers/fetch-all-incidents.controller'
+import { FetchAuthorIncidentsController } from './controllers/fetch-author-incidents.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -18,6 +19,7 @@ import { FetchAllIncidentsController } from './controllers/fetch-all-incidents.c
     RegisterIncidentController,
     DeleteIncidenController,
     FetchAllIncidentsController,
+    FetchAuthorIncidentsController,
   ],
 })
 export class HttpModule {}
