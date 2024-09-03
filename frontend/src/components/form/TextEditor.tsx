@@ -7,7 +7,6 @@ import {
   type MDXEditorProps,
   tablePlugin,
   imagePlugin,
-  codeBlockPlugin,
   linkPlugin,
   linkDialogPlugin,
   toolbarPlugin,
@@ -15,9 +14,6 @@ import {
   BoldItalicUnderlineToggles,
   BlockTypeSelect,
   ListsToggle,
-  InsertCodeBlock,
-  CodeToggle,
-  codeMirrorPlugin,
   CreateLink,
   InsertTable,
 } from "@mdxeditor/editor";
@@ -42,22 +38,6 @@ function TextEditor({ className, ...props }: MDXEditorProps) {
           linkDialogPlugin(),
           imagePlugin(),
           tablePlugin(),
-          codeBlockPlugin({ defaultCodeBlockLanguage: "js" }),
-          codeMirrorPlugin({
-            codeBlockLanguages: {
-              js: "JavaScript",
-              ts: "Typescript",
-              css: "CSS",
-              html: "HTML",
-              php: "PHP",
-              python: "Python",
-              java: "Java",
-              c: "C",
-              csharp: "C#",
-              bash: "Bash",
-              shell: "Shell",
-            },
-          }),
           toolbarPlugin({
             toolbarContents: () => (
               <>
@@ -65,8 +45,6 @@ function TextEditor({ className, ...props }: MDXEditorProps) {
                 <BlockTypeSelect />
                 <BoldItalicUnderlineToggles />
                 <ListsToggle />
-                <CodeToggle />
-                <InsertCodeBlock />
                 <CreateLink />
                 <InsertTable />
               </>

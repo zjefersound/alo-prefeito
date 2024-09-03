@@ -1,71 +1,69 @@
 import { RankingCardItem } from "../../components/shared/RankingCard";
 import { Category } from "../../models/Category";
 import { Post } from "../../models/Post";
-import { Tag } from "../../models/Tag";
 import { User } from "../../models/User";
 
 const users: User[] = [
   {
-    id: 1,
-    username: "john_doe",
+    id: '1',
     email: "john.doe@example.com",
     name: "John Doe",
-    avatar: "https://example.com/avatar1.png",
     createdAt: "2024-01-01T09:00:00Z",
-    updatedAt: "2024-08-01T10:00:00Z",
+    cpf: "123.123.123-12",
+    phone: "49123456789",
+    role: "CITIZEN"
   },
   {
-    id: 2,
-    username: "jane_smith",
+    id: '2',
     email: "jane.smith@example.com",
     name: "Jane Smith",
-    avatar: "https://example.com/avatar2.png",
     createdAt: "2024-01-05T09:00:00Z",
-    updatedAt: "2024-08-05T12:00:00Z",
+    cpf: "123.123.123-43",
+    phone: "12312312312",
+    role: "CITIZEN"
   },
   {
-    id: 3,
-    username: "michael_brown",
+    id: '3',
     email: "michael.brown@example.com",
     name: "Michael Brown",
-    avatar: "https://example.com/avatar3.png",
     createdAt: "2024-02-10T09:00:00Z",
-    updatedAt: "2024-08-10T10:00:00Z",
+    cpf: "123.123.123-43",
+    phone: "12312312312",
+    role: "CITIZEN"
   },
   {
-    id: 4,
-    username: "emily_white",
+    id: '4',
     email: "emily.white@example.com",
     name: "Emily White",
-    avatar: "https://example.com/avatar4.png",
     createdAt: "2024-03-15T09:00:00Z",
-    updatedAt: "2024-08-15T10:00:00Z",
+    cpf: "123.123.123-85",
+    phone: "12312312312",
+    role: "CITIZEN"
   },
   {
-    id: 5,
-    username: "daniel_jones",
+    id: '5',
     email: "daniel.jones@example.com",
     name: "Daniel Jones",
-    avatar: "https://example.com/avatar5.png",
     createdAt: "2024-04-20T09:00:00Z",
-    updatedAt: "2024-08-20T10:00:00Z",
+    cpf: "123.123.123-85",
+    phone: "12312312312",
+    role: "CITIZEN"
   },
   {
-    id: 6,
-    username: "zjefersound",
+    id: '6',
     email: "zjefersound@example.com",
     name: "Jeferson Souza",
-    avatar: "/user/avatar/3",
     createdAt: "2024-04-20T09:00:00Z",
-    updatedAt: "2024-08-20T10:00:00Z",
+    cpf: "123.123.123-85",
+    phone: "12312312312",
+    role: "CITIZEN"
   },
 ];
 
 const categories: Category[] = [
   {
-    id: 1,
+    id: '1',
     name: "Issue",
-    description: "Posts that require an answer to solve a problem.",
   },
 ];
 
@@ -81,10 +79,6 @@ export const mockedPosts: Post[] = [
     userId: 1,
     category: categories[0],
     user: users[5],
-    tags: [
-      { id: 1, name: "TypeScript" },
-      { id: 2, name: "JavaScript" },
-    ],
     totalUpvotes: 4,
     voted: false,
     favoriteCommentId: 1,
@@ -147,10 +141,6 @@ export const mockedPosts: Post[] = [
     userId: 2,
     category: categories[0],
     user: users[1],
-    tags: [
-      { id: 3, name: "React" },
-      { id: 4, name: "Frontend" },
-    ],
     totalUpvotes: 24,
     voted: false,
     comments: [
@@ -186,10 +176,6 @@ export const mockedPosts: Post[] = [
     userId: 1,
     category: categories[0],
     user: users[0],
-    tags: [
-      { id: 5, name: "Node.js" },
-      { id: 6, name: "Backend" },
-    ],
     comments: [],
     totalUpvotes: 97,
     voted: false,
@@ -205,11 +191,6 @@ export const mockedPosts: Post[] = [
     userId: 2,
     category: categories[0],
     user: users[1],
-    tags: [
-      { id: 7, name: "JavaScript" },
-      { id: 8, name: "Engines" },
-      { id: 9, name: "Eventloops" },
-    ],
     comments: [],
     totalUpvotes: 12,
     voted: true,
@@ -242,17 +223,4 @@ export const rankingCardItems: RankingCardItem[] = [
     user: users[4], // daniel_jones
     totalUpvotes: 75,
   },
-];
-
-export const academicTags: Tag[] = [
-  { id: 1, name: "Research Methodology" },
-  { id: 2, name: "Literature Review" },
-  { id: 3, name: "Data Analysis" },
-  { id: 4, name: "Case Studies" },
-  { id: 5, name: "Qualitative Research" },
-  { id: 6, name: "Quantitative Research" },
-  { id: 7, name: "Ethics in Research" },
-  { id: 8, name: "Peer Review" },
-  { id: 9, name: "Academic Writing" },
-  { id: 10, name: "Funding and Grants" },
 ];

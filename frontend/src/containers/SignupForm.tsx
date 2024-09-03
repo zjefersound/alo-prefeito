@@ -7,21 +7,20 @@ import { useState } from "react";
 import { Alert } from "../components/ui/Alert";
 import { TOAST_MESSAGES } from "../constants/toastMessages";
 import { useToast } from "../hooks/useToast";
-
 const signupFormFields: FieldConfig[] = [
   {
     id: "name",
-    label: "Name",
+    label: "Nome",
     type: "text",
-    placeholder: "Enter your name",
+    placeholder: "Digite seu nome",
     validations: [
       {
         rule: (value) => value.trim().length >= 3,
-        message: "Name must be at least 3 characters long",
+        message: "O nome deve ter pelo menos 3 caracteres",
       },
       {
         rule: (value) => value.split(" ").length > 1,
-        message: "Enter your last name",
+        message: "Insira seu sobrenome",
       },
     ],
   },
@@ -29,15 +28,15 @@ const signupFormFields: FieldConfig[] = [
     id: "email",
     label: "Email",
     type: "text",
-    placeholder: "Enter your email",
+    placeholder: "Digite seu email",
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "Email is required",
+        message: "O email é obrigatório",
       },
       {
         rule: (value) => /\S+@\S+\.\S+/.test(value),
-        message: "Invalid email address",
+        message: "Endereço de email inválido",
       },
     ],
   },
@@ -49,7 +48,11 @@ const signupFormFields: FieldConfig[] = [
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "Telefone é obrigatório",
+        message: "O telefone é obrigatório",
+      },
+      {
+        rule: (value) => /^[0-9]{10,11}$/.test(value),
+        message: "O telefone deve ter 11 dígitos",
       },
     ],
   },
@@ -61,39 +64,43 @@ const signupFormFields: FieldConfig[] = [
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "CPF é obrigatório",
+        message: "O CPF é obrigatório",
+      },
+      {
+        rule: (value) => /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(value),
+        message: "CPF inválido. Ex: 000.000.000-00",
       },
     ],
   },
   {
     id: "password",
-    label: "Password",
+    label: "Senha",
     type: "password",
-    placeholder: "Enter your password",
+    placeholder: "Digite sua senha",
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "Password is required",
+        message: "A senha é obrigatória",
       },
       {
-        rule: (value) => value.length >= 6,
-        message: "Password must be at least 6 characters long",
+        rule: (value) => value.length >= 8,
+        message: "A senha deve ter pelo menos 8 caracteres",
       },
     ],
   },
   {
     id: "confirmPassword",
-    label: "Confirm password",
+    label: "Confirme sua senha",
     type: "password",
-    placeholder: "Enter your password",
+    placeholder: "Digite sua senha novamente",
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "Password confirmation is required",
+        message: "A confirmação da senha é obrigatória",
       },
       {
         rule: (value, form) => value === form.password,
-        message: "Passwords do not match",
+        message: "As senhas não correspondem",
       },
     ],
   },
@@ -130,7 +137,7 @@ export function SignupForm() {
   });
   return (
     <>
-      <SmartForm submitText="Create account" formState={formState} />
+      <SmartForm submitText="Criar conta" formState={formState} />
       {error && <Alert color="error">{error}</Alert>}
     </>
   );

@@ -13,7 +13,6 @@ import { Home } from "../pages/Home";
 import { Signup } from "../pages/Signup";
 import { Post } from "../pages/Post";
 import { Categories } from "../pages/Categories";
-import { Tags } from "../pages/Tags";
 import { NewPost } from "../pages/NewPost";
 import { Search } from "../pages/Search";
 import { EditPost } from "../pages/EditPost";
@@ -43,14 +42,6 @@ const routes: { [key: string]: RouteObject[] } = {
     {
       path: "/post/:id/edit",
       element: <EditPost />,
-    },
-    {
-      path: "/tags",
-      element: <Tags />,
-    },
-    {
-      path: "/tags/:id",
-      element: <Tags />,
     },
     {
       path: "/search",

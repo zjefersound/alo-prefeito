@@ -1,7 +1,6 @@
 import {
   MdOutlineHome,
   MdOutlineLibraryBooks,
-  MdOutlineLocalOffer,
   MdOutlineMilitaryTech,
 } from "react-icons/md";
 import { Card } from "../ui/Card";
@@ -14,19 +13,9 @@ const NAVIGATION_ITEMS = [
     label: "Home",
   },
   {
-    path: "/tags",
-    Icon: MdOutlineLocalOffer,
-    label: "Tags",
-  },
-  {
     path: "/categories",
     Icon: MdOutlineLibraryBooks,
     label: "Categories",
-  },
-  {
-    path: "/rankings",
-    Icon: MdOutlineMilitaryTech,
-    label: "Rankings",
   },
 ];
 

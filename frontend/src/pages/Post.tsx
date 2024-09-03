@@ -47,17 +47,7 @@ export function Post() {
     <Content.Root>
       <Content.Sidebar>
         <NavigationCard />
-        <PopularItemCard
-          title="Popular tags"
-          path="/tags"
-          items={[
-            { id: 1, label: "#biology", totalPosts: 53 },
-            { id: 7, label: "#math", totalPosts: 43 },
-            { id: 8, label: "#science", totalPosts: 41 },
-            { id: 9, label: "#englsih", totalPosts: 31 },
-            { id: 10, label: "#history", totalPosts: 12 },
-          ]}
-        />
+         
         <PopularItemCard
           title="Popular categories"
           path="/categories"
@@ -74,9 +64,9 @@ export function Post() {
         <GoBack to="/" />
         <Card className="space-y-6">
           <header className="flex">
-            <Avatar name={post.user.name} url={post.user.avatar} />
+            <Avatar name={post.user.name} />
             <div className="flex flex-col ml-4">
-              <span>{post.user.username}</span>
+              <span>{post.user.email}</span>
               <Text size="sm" asChild>
                 <span className="tracking-wider">
                   {formatDistance(new Date(post.createdAt), new Date(), {
@@ -101,13 +91,6 @@ export function Post() {
             <Heading size="xs" asChild>
               <h2 className="tracking-wider">{post.title}</h2>
             </Heading>
-            <ul className="flex flex-wrap gap-x-3 gap-y-2 mt-2 lg:hidden">
-              {post.tags?.map((tag) => (
-                <li key={tag.id}>
-                  <Tag>{tag.name}</Tag>
-                </li>
-              ))}
-            </ul>
           </div>
           <MarkdownPreview>{post.content}</MarkdownPreview>
           <div className="flex space-x-3">
@@ -152,26 +135,11 @@ export function Post() {
       <Content.Sidebar>
         <SimpleUserCard
           name={post.user.name}
+          email={post.user.email}
           rankingPosition={12}
           totalPosts={32}
           totalUpvotes={642123}
-          username={post.user.username}
-          url={post.user.avatar}
         />
-        {post.tags?.length && (
-          <Card>
-            <Heading size="xs" asChild>
-              <h2 className="tracking-wider">Featured tags</h2>
-            </Heading>
-            <ul className="flex flex-wrap gap-x-3 gap-y-2 mt-6">
-              {post.tags.map((tag) => (
-                <li key={tag.id}>
-                  <Tag>{tag.name}</Tag>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        )}
         <TrendingPosts
           posts={[mockedPosts[0], mockedPosts[1], mockedPosts[2]]}
         />

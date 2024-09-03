@@ -23,7 +23,6 @@ export function TrendingPosts({ posts }: TrendingPostsProps) {
                 <div className="flex items-center">
                   <Avatar
                     name={post.user.name}
-                    url={post.user.avatar}
                     size="xs"
                   />
                   <span className="text-xs text-agorium-400 font-bold ml-2 tracking-wider">
@@ -42,11 +41,6 @@ export function TrendingPosts({ posts }: TrendingPostsProps) {
                   <span className="text-xs text-orange-300 tracking-wider font-bold mr-auto truncate">
                     {post.category.name}
                   </span>
-                  <Text asChild>
-                    <span className="flex items-center">
-                      {post.tags?.length || 0} tags
-                    </span>
-                  </Text>
                   <Text asChild>
                     <span className="flex items-center">
                       <MdOutlineModeComment className="mr-1" />{" "}

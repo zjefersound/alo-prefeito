@@ -20,8 +20,8 @@ const loginFormFields: FieldConfig[] = [
   {
     id: "password",
     type: "password",
-    label: "Password",
-    placeholder: "Enter your password",
+    label: "Senha",
+    placeholder: "Digite sua senha",
     Icon: MdLockOutline,
   },
 ];
@@ -50,12 +50,6 @@ export function LoginForm() {
           error={errors[field.id]}
         />
       ))}
-      <Link
-        to="/forgot-password"
-        className="text-orange-300 text-xs font-semibold ml-auto"
-      >
-        Forgot password
-      </Link>
       <Button className="w-full flex justify-center" behavior="submit">
         {loading && <Loading size="sm" className="mr-3" />}
         Login

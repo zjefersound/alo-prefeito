@@ -12,17 +12,6 @@ export function NewPost() {
         <Content.Sidebar>
           <NavigationCard />
           <PopularItemCard
-            title="Popular tags"
-            path="/tags"
-            items={[
-              { id: 1, label: "#biology", totalPosts: 53 },
-              { id: 7, label: "#math", totalPosts: 43 },
-              { id: 8, label: "#science", totalPosts: 41 },
-              { id: 9, label: "#englsih", totalPosts: 31 },
-              { id: 10, label: "#history", totalPosts: 12 },
-            ]}
-          />
-          <PopularItemCard
             title="Popular categories"
             path="/categories"
             items={[

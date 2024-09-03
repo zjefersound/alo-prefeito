@@ -4,13 +4,11 @@ import { Text } from "../ui/Text";
 
 interface AuthorOverviewProps {
   name: string;
-  username: string;
   avatar?: string;
   date: string;
 }
 export function AuthorOverview({
   name,
-  username,
   avatar,
   date,
 }: AuthorOverviewProps) {
@@ -18,7 +16,7 @@ export function AuthorOverview({
     <header className="flex">
       <Avatar name={name} url={avatar} />
       <div className="flex flex-col ml-4">
-        <span>{username}</span>
+        <span>{name}</span>
         <Text size="sm" asChild>
           <span className="tracking-wider">
             {formatDistance(new Date(date), new Date(), {

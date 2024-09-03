@@ -17,9 +17,9 @@ export function Login() {
           <LoginForm />
           <Text asChild>
             <span className="block text-center">
-              No account?
+              Não possui uma conta?
               <Link to="/signup">
-                <span className="text-orange-300 font-bold"> Sign up</span>
+                <span className="text-orange-300 font-bold"> Cadastre-se</span>
               </Link>
             </span>
           </Text>
