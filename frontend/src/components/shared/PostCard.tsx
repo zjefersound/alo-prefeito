@@ -17,7 +17,7 @@ export function PostCard({ post }: PostCardProps) {
         <AuthorOverview
           avatar={post.user.avatar}
           username={post.user.username}
-          name={post.user.fullName}
+          name={post.user.name}
           date={post.createdAt}
         />
         <div className="space-y-2">

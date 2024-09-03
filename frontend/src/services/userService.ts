@@ -1,43 +1,34 @@
-import { UploadedFile } from "../components/form/FileInput";
 import { User } from "../models/User";
-import { dataURLtoBlob } from "../utils/dataURLToBlob";
 import { api } from "./api";
 
 export type UserLoginPayload = {
-  login: string;
+  email: string;
   password: string;
 };
 interface ILoginResponse {
-  token: string;
+  accessToken: string;
 }
 function login(data: UserLoginPayload) {
-  return api.post<ILoginResponse>("/login", data);
+  return api.post<ILoginResponse>("/sessions", data);
 }
 
 export type UserSignupPayload = {
-  email: string;
-  username: string;
-  fullName: string;
-  password: string;
-  avatar?: UploadedFile;
+	email: string;
+	password: string;
+	name: string;
+	cpf: string;
+	phone: string;
+	role: string;
 };
 async function signup(data: UserSignupPayload) {
-  const formData = new FormData();
-  formData.append("email", data.email);
-  formData.append("username", data.username);
-  formData.append("fullName", data.fullName);
-  formData.append("password", data.password);
-  if (data.avatar) {
-    const avatarBlob = await dataURLtoBlob(data.avatar.dataURL);
-    if (!avatarBlob) return;
-    formData.append("avatar", avatarBlob, data.avatar.name);
-  }
-
-  return api.post("/signup", formData);
+  return api.post("/users", data);
 }
 
+interface MeResponse {
+  user: User;
+}
 function me() {
-  return api.get<User>("/user/me");
+  return api.get<MeResponse>("/users/profile");
 }
 export const userService = {
   login,

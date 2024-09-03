@@ -22,12 +22,12 @@ export function TrendingPosts({ posts }: TrendingPostsProps) {
               <div className="-my-2 py-2 rounded -mx-2 px-2 hover:bg-agorium-700">
                 <div className="flex items-center">
                   <Avatar
-                    name={post.user.fullName}
+                    name={post.user.name}
                     url={post.user.avatar}
                     size="xs"
                   />
                   <span className="text-xs text-agorium-400 font-bold ml-2 tracking-wider">
-                    {post.user.fullName}
+                    {post.user.name}
                   </span>
                   <span className="text-xs text-agorium-400 ml-auto tracking-wider">
                     {formatDistance(new Date(post.createdAt), new Date(), {

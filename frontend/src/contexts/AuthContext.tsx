@@ -52,8 +52,8 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     return await userService
       .login(data)
       .then((res) => {
-        if (res.data.token) {
-          setToken(res.data.token);
+        if (res.data.accessToken) {
+          setToken(res.data.accessToken);
         }
       })
       .catch((err: AxiosError<IApiErrorResponse>) => {
@@ -90,8 +90,8 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
       userService
         .me()
         .then((response) => {
-          if (response.data) {
-            setUser(response.data);
+          if (response.data.user) {
+            setUser(response.data.user);
             setAuthenticated(true);
           }
         })

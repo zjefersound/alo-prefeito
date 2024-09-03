@@ -10,7 +10,7 @@ import { useToast } from "../hooks/useToast";
 
 const signupFormFields: FieldConfig[] = [
   {
-    id: "fullName",
+    id: "name",
     label: "Name",
     type: "text",
     placeholder: "Enter your name",
@@ -22,22 +22,6 @@ const signupFormFields: FieldConfig[] = [
       {
         rule: (value) => value.split(" ").length > 1,
         message: "Enter your last name",
-      },
-    ],
-  },
-  {
-    id: "username",
-    label: "Username",
-    type: "text",
-    placeholder: "Enter your username",
-    validations: [
-      {
-        rule: (value) => value.trim() !== "",
-        message: "Username is required",
-      },
-      {
-        rule: (value) => value.trim().length >= 3,
-        message: "Name must be at least 3 characters long",
       },
     ],
   },
@@ -54,6 +38,30 @@ const signupFormFields: FieldConfig[] = [
       {
         rule: (value) => /\S+@\S+\.\S+/.test(value),
         message: "Invalid email address",
+      },
+    ],
+  },
+  {
+    id: "phone",
+    label: "Número de telefone",
+    type: "tel",
+    placeholder: "Digite seu telefone",
+    validations: [
+      {
+        rule: (value) => value.trim() !== "",
+        message: "Telefone é obrigatório",
+      },
+    ],
+  },
+  {
+    id: "cpf",
+    label: "CPF",
+    type: "text",
+    placeholder: "Digite seu CPF",
+    validations: [
+      {
+        rule: (value) => value.trim() !== "",
+        message: "CPF é obrigatório",
       },
     ],
   },
@@ -89,15 +97,6 @@ const signupFormFields: FieldConfig[] = [
       },
     ],
   },
-  {
-    label: "Profile Picture",
-    type: "file",
-    id: "avatar",
-    placeholder: "Drag & drop or select your profile picture",
-    allowedFileTypes: ["image/*"],
-    height: 200,
-    width: 200,
-  },
 ];
 
 export function SignupForm() {
@@ -105,8 +104,12 @@ export function SignupForm() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const onSubmit = (data: UserSignupPayload) => {
+    const payload = {
+      ...data,
+      role: "CITIZEN"
+    }
     return userService
-      .signup(data)
+      .signup(payload)
       .then(() => {
         navigate("/login");
         launchToast({

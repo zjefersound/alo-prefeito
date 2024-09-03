@@ -31,16 +31,14 @@ export function CommentCard({
     <Card className="space-y-4">
       <AuthorOverview
         date={comment.createdAt}
-        name={comment.user!.fullName}
-        username={comment.user!.username}
-        avatar={comment.user!.avatar}
+        name={comment.user!.name}
       />
       {comment.parentComment && (
         <div>
           <Text>
             Replying to{" "}
             <span className="font-semibold">
-              @{comment.parentComment.user!.username}
+              @{comment.parentComment.user!.name}
             </span>{" "}
           </Text>
         </div>

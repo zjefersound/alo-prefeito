@@ -40,25 +40,6 @@ export const postFields: FieldConfig[] = [
     ],
   },
   {
-    id: "tags",
-    type: "text",
-    label: "Add tags",
-    placeholder: "Write your tags here. #math #something",
-    required: false,
-    validations: [
-      {
-        rule: (value) =>
-          value.split(" ").every((tag: string) => tag.startsWith("#")),
-        message: "Each tag must start with #",
-      },
-      {
-        rule: (value) =>
-          value.split(" ").every((tag: string) => tag.length <= 30),
-        message: "Each tag must be 30 characters or less",
-      },
-    ],
-  },
-  {
     id: "content",
     type: "text",
     label: "Content",
@@ -72,6 +53,32 @@ export const postFields: FieldConfig[] = [
       {
         rule: (value) => value.length >= 50,
         message: "Content must be at least 50 characters long",
+      },
+    ],
+  },
+  {
+    id: "latitude",
+    type: "text",
+    label: "latitude",
+    placeholder: "latitude",
+    required: true,
+    validations: [
+      {
+        rule: (value) => value.trim() !== "",
+        message: "latitude is required",
+      },
+    ],
+  },
+  {
+    id: "longitude",
+    type: "text",
+    label: "longitude",
+    placeholder: "longitude",
+    required: true,
+    validations: [
+      {
+        rule: (value) => value.trim() !== "",
+        message: "longitude is required",
       },
     ],
   },

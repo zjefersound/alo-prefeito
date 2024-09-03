@@ -74,7 +74,7 @@ export function Post() {
         <GoBack to="/" />
         <Card className="space-y-6">
           <header className="flex">
-            <Avatar name={post.user.fullName} url={post.user.avatar} />
+            <Avatar name={post.user.name} url={post.user.avatar} />
             <div className="flex flex-col ml-4">
               <span>{post.user.username}</span>
               <Text size="sm" asChild>
@@ -151,7 +151,7 @@ export function Post() {
       </Content.Main>
       <Content.Sidebar>
         <SimpleUserCard
-          name={post.user.fullName}
+          name={post.user.name}
           rankingPosition={12}
           totalPosts={32}
           totalUpvotes={642123}

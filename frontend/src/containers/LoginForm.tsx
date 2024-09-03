@@ -11,10 +11,10 @@ const MemoizedSmartField = memo(SmartField);
 
 const loginFormFields: FieldConfig[] = [
   {
-    id: "login",
+    id: "email",
     type: "text",
-    label: "Username or email",
-    placeholder: "Enter your username",
+    label: "Email",
+    placeholder: "Digite seu email",
     Icon: MdPersonOutline,
   },
   {

@@ -1,9 +1,9 @@
 export type User = {
-  id: number;
-  username: string;
-  email: string;
-  fullName: string;
-  avatar?: string;
+  id:  string;
+  name:  string;
+  email:  string;
+  cpf:  string;
+  phone:  string;
+  role: "CITIZEN" | "BACKOFFICE" | "API";
   createdAt: string;
-  updatedAt: string | null;
 };

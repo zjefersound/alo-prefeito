@@ -44,12 +44,12 @@ export function Header() {
           </Button>
         </Link>
         <div className="flex items-center space-x-4">
-          <Avatar name={user!.fullName} url={user!.avatar} />
+          <Avatar name={user!.name} />
           <p
-            title={user!.fullName}
-            className="hidden md:flex flex-1 font-serif text-orange-300 max-w-52 truncate"
+            title={user!.name}
+            className="hidden md:flex flex-1 max-w-52 truncate"
           >
-            {printFirstAndLastName(user!.fullName)}
+            {printFirstAndLastName(user!.name)}
           </p>
         </div>
       </div>
