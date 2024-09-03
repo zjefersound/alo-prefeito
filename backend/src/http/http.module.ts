@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common'
 import { RegisterUserController } from './controllers/register-user.controller'
 import { AuthenticateUserController } from './controllers/authenticate-user.controller'
 import { CreateCategoryController } from './controllers/create-category.controller'
+import { FetchCategoriesController } from './controllers/fetch-categories.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -10,6 +11,7 @@ import { CreateCategoryController } from './controllers/create-category.controll
     RegisterUserController,
     AuthenticateUserController,
     CreateCategoryController,
+    FetchCategoriesController,
   ],
 })
 export class HttpModule {}
