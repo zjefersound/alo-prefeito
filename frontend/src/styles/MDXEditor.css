@@ -1,0 +1,96 @@
+.dark-editor {
+  --accentBase: var(--orange-300);
+  --accentBgSubtle: var(--orange-400);
+  --accentBg: var(--orange-400);
+  --accentBgHover: var(--orange-200);
+  --accentBgActive: #fffbeb66;
+  --accentLine: var(--orange-400);
+
+  --accentBorder: var(--orange-400);
+  --accentBorderHover: var(--orange-300);
+  --accentSolid: var(--orange-300);
+  --accentSolidHover: var(--orange-300);
+  --accentText: var(--agorium-50);
+  --accentTextContrast: var(--orange-300);
+
+  --baseBase: var(--agorium-800);
+  --baseBgSubtle: var(--agorium-700);
+  --baseBg: var(--agorium-800);
+  --baseBgHover: var(--agorium-700);
+  --baseBgActive: var(--agorium-700);
+
+  --baseLine: var(--agorium-600);
+  --baseBorder: var(--agorium-600);
+  --baseBorderHover: var(--agorium-500);
+  --baseSolid: var(--agorium-400);
+  --baseSolidHover: var(--agorium-600);
+
+  --baseTextContrast: var(--agorium-50);
+  --baseText: var(--agorium-400);
+
+  font-family: "Inter", -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Courier New", monospace;
+  --basePageBg: var(--agorium-900);
+  color: var(--agorium-50);
+  background: var(--agorium-800);
+}
+
+.mdxeditor .cm-editor {
+  margin: -0.8rem;
+  min-height: 2.75rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.dark-editor form {
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.dark-editor form > div {
+  gap: 0.25rem;
+}
+
+.dark-editor form label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--agorium-50);
+}
+
+.dark-editor form button {
+  font-weight: 700;
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
+}
+
+.dark-editor form button[type="submit"] {
+  color: var(--agorium-900);
+  background: var(--orange-300);
+}
+
+.dark-editor form button[type="submit"]:hover {
+  opacity: 90%;
+}
+
+.dark-editor form button[type="submit"]:active {
+  background: var(--orange-200);
+}
+
+.dark-editor form button[type="reset"] {
+  color: var(--orange-300);
+  background: var(--agorium-700);
+  border: 1px solid var(--agorium-600);
+}
+
+.dark-editor form button[type="reset"]:hover {
+  background: var(--agorium-600);
+}
+
+.dark-editor form button[type="reset"]:active {
+  background: var(--agorium-500);
+}
+
+.mdxeditor-popup-container {
+  z-index: 30;
+}
