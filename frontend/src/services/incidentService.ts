@@ -11,7 +11,6 @@ export type IncidentPayload = {
 	title: string;
 	content: string;
 	categoryId: string;
-	category: string;
 	latitude: number;
 	longitude: number;
 }

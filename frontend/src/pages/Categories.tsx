@@ -12,18 +12,14 @@ import {
   useParams,
   useSearchParams,
 } from "react-router-dom";
-import { categoryService } from "../services/categoryService";
-import { useQuery } from "@tanstack/react-query";
 import { ContentSkeleton } from "../components/ui/ContentSkeleton";
+import { useCategories } from "../hooks/useCategories";
 
 export function Categories() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { isPending, data } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => categoryService.getAll(),
-  });
+  const { isPending, categories } = useCategories();
   if (isPending) return <ContentSkeleton />;
   return (
     <Content.Root>
@@ -46,7 +42,7 @@ export function Categories() {
           <SmallTabs
             value={id ?? ""}
             onChange={(value) => navigate("/categories/" + value)}
-            options={data?.data?.categories?.map((c) => ({
+            options={categories.map((c) => ({
               label: c.name,
               value: c.id,
             }))}
