@@ -100,7 +100,6 @@ export const EditPostProvider = ({ children }: EditPostProviderProps) => {
         setData({
           content: res.data.content,
           categoryId: String(res.data.category.id),
-          tags: res.data.tags?.map((tag) => tag.name).join(" ") ?? "",
           title: res.data.title,
         });
       })

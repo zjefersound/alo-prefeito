@@ -79,10 +79,6 @@ export const mockedPosts: Post[] = [
     userId: 1,
     category: categories[0],
     user: users[5],
-    tags: [
-      { id: 1, name: "TypeScript" },
-      { id: 2, name: "JavaScript" },
-    ],
     totalUpvotes: 4,
     voted: false,
     favoriteCommentId: 1,
@@ -145,10 +141,6 @@ export const mockedPosts: Post[] = [
     userId: 2,
     category: categories[0],
     user: users[1],
-    tags: [
-      { id: 3, name: "React" },
-      { id: 4, name: "Frontend" },
-    ],
     totalUpvotes: 24,
     voted: false,
     comments: [
@@ -184,10 +176,6 @@ export const mockedPosts: Post[] = [
     userId: 1,
     category: categories[0],
     user: users[0],
-    tags: [
-      { id: 5, name: "Node.js" },
-      { id: 6, name: "Backend" },
-    ],
     comments: [],
     totalUpvotes: 97,
     voted: false,
@@ -203,11 +191,6 @@ export const mockedPosts: Post[] = [
     userId: 2,
     category: categories[0],
     user: users[1],
-    tags: [
-      { id: 7, name: "JavaScript" },
-      { id: 8, name: "Engines" },
-      { id: 9, name: "Eventloops" },
-    ],
     comments: [],
     totalUpvotes: 12,
     voted: true,

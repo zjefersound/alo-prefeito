@@ -91,13 +91,6 @@ export function Post() {
             <Heading size="xs" asChild>
               <h2 className="tracking-wider">{post.title}</h2>
             </Heading>
-            <ul className="flex flex-wrap gap-x-3 gap-y-2 mt-2 lg:hidden">
-              {post.tags?.map((tag) => (
-                <li key={tag.id}>
-                  <Tag>{tag.name}</Tag>
-                </li>
-              ))}
-            </ul>
           </div>
           <MarkdownPreview>{post.content}</MarkdownPreview>
           <div className="flex space-x-3">
@@ -145,23 +138,7 @@ export function Post() {
           rankingPosition={12}
           totalPosts={32}
           totalUpvotes={642123}
-          username={post.user.username}
-          url={post.user.avatar}
         />
-        {post.tags?.length && (
-          <Card>
-            <Heading size="xs" asChild>
-              <h2 className="tracking-wider">Featured tags</h2>
-            </Heading>
-            <ul className="flex flex-wrap gap-x-3 gap-y-2 mt-6">
-              {post.tags.map((tag) => (
-                <li key={tag.id}>
-                  <Tag>{tag.name}</Tag>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        )}
         <TrendingPosts
           posts={[mockedPosts[0], mockedPosts[1], mockedPosts[2]]}
         />
