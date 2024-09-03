@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --amber-50: #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-200: #fde68a;
+
+  --agorium-50: #f8fbfc;
+  --agorium-100: #f1f6f9;
+  --agorium-200: #e2ebf0;
+  --agorium-300: #cbd9e1;
+  --agorium-400: #94abb8;
+  --agorium-500: #647d8b;
+  --agorium-600: #475d69;
+  --agorium-700: #334955;
+  --agorium-800: #1e313b;
+  --agorium-900: #142127;
+
+  --header-height: 5rem;
+  --page-padding-x: 1rem;
+  --left-bar-width: 0px;
+  --right-bar-width: 0px;
+
+  --content-height: calc(100dvh - var(--header-height));
+  --main-content-padding-x: 0;
+  --main-content-width: 1000px;
+  --main-content-max-width: calc(
+    100vw - var(--left-bar-width) - var(--right-bar-width) -
+      var(--page-padding-x) - var(--page-padding-x)
+  );
+}
+
+#root {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  background: var(--agorium-900);
+  color: var(--agorium-50);
+}
+
+* {
+  scrollbar-color: var(--agorium-900) var(--agorium-900);
+  scrollbar-width: thin;
+}
+
+*:hover {
+  scrollbar-color: var(--agorium-700) var(--agorium-900);
+}
+
+/* sm */
+@media (min-width: 640px) {
+  :root {
+    --page-padding-x: 2rem;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  :root {
+    --left-bar-width: 260px;
+    --main-content-padding-x: 1.5rem;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  :root {
+    --right-bar-width: 300px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+}
