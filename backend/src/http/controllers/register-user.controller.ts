@@ -6,13 +6,16 @@ import { hash } from 'bcryptjs'
 import { emailSchema } from '../schemas/email-schema'
 import { passwordSchema } from '../schemas/password-schema'
 import { Public } from '@/auth/decorators/public.decorator'
+import { nameSchema } from '../schemas/name-schema'
+import { cpfSchema } from '../schemas/cpf-schema'
+import { phoneSchema } from '../schemas/phone-schema'
 
 const bodySchema = z.object({
   email: emailSchema,
   password: passwordSchema,
-  name: z.string().min(1).max(255),
-  cpf: z.string().min(14).max(14),
-  phone: z.string().min(11).max(11),
+  name: nameSchema,
+  cpf: cpfSchema,
+  phone: phoneSchema,
   role: z.enum(['CITIZEN', 'API']),
 })
 

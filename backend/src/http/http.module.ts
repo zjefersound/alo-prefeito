@@ -10,6 +10,7 @@ import { FetchAllIncidentsController } from './controllers/fetch-all-incidents.c
 import { FetchAuthorIncidentsController } from './controllers/fetch-author-incidents.controller'
 import { FetchLastIncidentsController } from './controllers/fetch-last-incidents.controller'
 import { GetUserProfileController } from './controllers/get-user-profile.controller'
+import { UpdateUserProfileController } from './controllers/update-user-profile.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -24,6 +25,7 @@ import { GetUserProfileController } from './controllers/get-user-profile.control
     FetchAuthorIncidentsController,
     FetchLastIncidentsController,
     GetUserProfileController,
+    UpdateUserProfileController,
   ],
 })
 export class HttpModule {}
