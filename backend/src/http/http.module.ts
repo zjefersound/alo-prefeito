@@ -6,6 +6,7 @@ import { CreateCategoryController } from './controllers/create-category.controll
 import { FetchCategoriesController } from './controllers/fetch-categories.controller'
 import { RegisterIncidentController } from './controllers/register-incident.controller'
 import { DeleteIncidenController } from './controllers/delete-incident.controller'
+import { FetchAllIncidentsController } from './controllers/fetch-all-incidents.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -16,6 +17,7 @@ import { DeleteIncidenController } from './controllers/delete-incident.controlle
     FetchCategoriesController,
     RegisterIncidentController,
     DeleteIncidenController,
+    FetchAllIncidentsController,
   ],
 })
 export class HttpModule {}

@@ -40,7 +40,7 @@ export class AuthorizationGuard implements CanActivate {
 
     const { can } = getUserPermissions(userId, role)
 
-    if (role === 'CITIZEN' && subject === 'incident' && action !== 'register') {
+    if (role === 'CITIZEN' && subject === 'incident' && action === 'delete') {
       const { incidentId } = request.params
 
       const incident = await this.prisma.incident.findUnique({
@@ -53,9 +53,9 @@ export class AuthorizationGuard implements CanActivate {
         return false
       }
 
-      const insident = incidentSchema.parse(incident)
+      const schema = incidentSchema.parse(incident)
 
-      return can(action, insident)
+      return can(action, schema)
     }
 
     return can(action, subject)

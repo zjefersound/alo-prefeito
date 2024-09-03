@@ -25,8 +25,6 @@ export const permissions: Record<Role, PermissionsByRole> = {
       authorId: { $eq: user.id },
     })
 
-    can('fetch', 'incident', {
-      authorId: { $eq: user.id },
-    })
+    can('fetch', 'incident')
   },
 }
