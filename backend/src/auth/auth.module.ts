@@ -7,6 +7,7 @@ import { EnvService } from '../env/env.service'
 import { JwtStrategy } from './jwt.strategy'
 import { JwtAuthGuard } from './guard/jwt-auth.guard'
 import { APP_GUARD } from '@nestjs/core'
+import { AuthorizationGuard } from './guard/authorization.guard'
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { APP_GUARD } from '@nestjs/core'
           secret,
           signOptions: {
             algorithm: 'HS256',
-            expiresIn: '1d',
+            expiresIn: '10d',
           },
         }
       },
@@ -35,6 +36,10 @@ import { APP_GUARD } from '@nestjs/core'
     {
       provide: APP_GUARD,
       useClass: JwtAuthGuard,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: AuthorizationGuard,
     },
   ],
 })

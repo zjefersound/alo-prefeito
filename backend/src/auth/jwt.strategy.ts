@@ -16,9 +16,9 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     const secret = envService.get('JWT_SECRET')
 
     super({
+      algorithms: ['HS256'],
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: secret,
-      algorithms: ['RS256'],
     })
   }
 
