@@ -137,7 +137,7 @@ export function SignupForm() {
   });
   return (
     <>
-      <SmartForm submitText="Create account" formState={formState} />
+      <SmartForm submitText="Criar conta" formState={formState} />
       {error && <Alert color="error">{error}</Alert>}
     </>
   );
