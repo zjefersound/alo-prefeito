@@ -8,6 +8,7 @@ import { RegisterIncidentController } from './controllers/register-incident.cont
 import { DeleteIncidenController } from './controllers/delete-incident.controller'
 import { FetchAllIncidentsController } from './controllers/fetch-all-incidents.controller'
 import { FetchAuthorIncidentsController } from './controllers/fetch-author-incidents.controller'
+import { FetchLastIncidentsController } from './controllers/fetch-last-incidents.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -20,6 +21,7 @@ import { FetchAuthorIncidentsController } from './controllers/fetch-author-incid
     DeleteIncidenController,
     FetchAllIncidentsController,
     FetchAuthorIncidentsController,
+    FetchLastIncidentsController,
   ],
 })
 export class HttpModule {}
