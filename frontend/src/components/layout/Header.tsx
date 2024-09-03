@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className="h-[var(--header-height)] shrink-0 bg-agorium-800 sticky top-0 z-10 flex items-center justify-between px-[var(--page-padding-x)]">
       <LogoHorizontal />
-      <TextInput.Root className=" w-min min-w-[500px] max-w-full">
+      <TextInput.Root className="max-sm:hidden w-min min-w-[500px] max-w-full">
         <TextInput.Icon>
           <MdOutlineSearch />
         </TextInput.Icon>
@@ -38,7 +38,7 @@ export function Header() {
         />
       </TextInput.Root>
       <div className="flex">
-        <Link to="/new-post" className="mr-6">
+        <Link to="/new-post" className="mr-6 max-sm:hidden">
           <Button>
             <MdAdd className="size-6 mr-2" /> Create
           </Button>

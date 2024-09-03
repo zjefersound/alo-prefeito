@@ -12,11 +12,19 @@ import {
   useParams,
   useSearchParams,
 } from "react-router-dom";
+import { categoryService } from "../services/categoryService";
+import { useQuery } from "@tanstack/react-query";
+import { ContentSkeleton } from "../components/ui/ContentSkeleton";
 
 export function Categories() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { isPending, data } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => categoryService.getAll(),
+  });
+  if (isPending) return <ContentSkeleton />;
   return (
     <Content.Root>
       <Content.Sidebar>
@@ -38,16 +46,10 @@ export function Categories() {
           <SmallTabs
             value={id ?? ""}
             onChange={(value) => navigate("/categories/" + value)}
-            options={[
-              { label: "Issue", value: "issue" },
-              { label: "Discussion", value: "discussion" },
-              { label: "Research", value: "research" },
-              { label: "Question", value: "question" },
-              { label: "Debate", value: "debate" },
-              { label: "Collaboration", value: "collaboration" },
-              { label: "Feedback", value: "feedback" },
-              { label: "Tutoriais", value: "tutoriais" },
-            ]}
+            options={data?.data?.categories?.map((c) => ({
+              label: c.name,
+              value: c.id,
+            }))}
           />
           <div className="flex justify-between items-center">
             <span>34 Posts</span>
