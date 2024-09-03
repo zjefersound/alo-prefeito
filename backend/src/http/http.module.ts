@@ -5,6 +5,7 @@ import { AuthenticateUserController } from './controllers/authenticate-user.cont
 import { CreateCategoryController } from './controllers/create-category.controller'
 import { FetchCategoriesController } from './controllers/fetch-categories.controller'
 import { RegisterIncidentController } from './controllers/register-incident.controller'
+import { DeleteIncidenController } from './controllers/delete-incident.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -14,6 +15,7 @@ import { RegisterIncidentController } from './controllers/register-incident.cont
     CreateCategoryController,
     FetchCategoriesController,
     RegisterIncidentController,
+    DeleteIncidenController,
   ],
 })
 export class HttpModule {}
