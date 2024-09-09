@@ -17,13 +17,7 @@ export const permissions: Record<Role, PermissionsByRole> = {
     can('delete', 'incident')
     can('fetch', 'incident')
   },
-  API(_, { can }) {
-    can('get', 'user')
-    can('update', 'user')
-
-    can('fetch', 'incident')
-  },
-  CITIZEN(user, { can }) {
+  CITIZEN(_, { can }) {
     can('get', 'user')
     can('update', 'user')
 
@@ -31,8 +25,12 @@ export const permissions: Record<Role, PermissionsByRole> = {
 
     can('register', 'incident')
     can('fetch', 'incident')
-    can('delete', 'incident', {
-      authorId: { $eq: user.id },
-    })
+    can('delete', 'incident')
+  },
+  API(_, { can }) {
+    can('get', 'user')
+    can('update', 'user')
+
+    can('fetch', 'incident')
   },
 }
