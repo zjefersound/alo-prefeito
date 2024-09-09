@@ -18,7 +18,7 @@ export function TrendingPosts({ posts }: TrendingPostsProps) {
       <ul className="mt-6 space-y-6">
         {posts.map((post) => (
           <li key={post.id}>
-            <Link to={`/post/${post.id}`}>
+            <Link to={`/incident/${post.id}`}>
               <div className="-my-2 py-2 rounded -mx-2 px-2 hover:bg-agorium-700">
                 <div className="flex items-center">
                   <Avatar

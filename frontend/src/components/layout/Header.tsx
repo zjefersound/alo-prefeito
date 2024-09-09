@@ -38,7 +38,7 @@ export function Header() {
         />
       </TextInput.Root>
       <div className="flex">
-        <Link to="/new-post" className="mr-6 max-sm:hidden">
+        <Link to="/new-incident" className="mr-6 max-sm:hidden">
           <Button>
             <MdAdd className="size-6 mr-2" /> Create
           </Button>

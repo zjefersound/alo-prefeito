@@ -10,6 +10,14 @@ export const TOAST_MESSAGES = {
     notFoundTitle: "Post was not found",
     notFoundDescription: "Verify if your URL is correct and try again.",
   },
+  Incident: {
+    createdTitle: "Incidente criado com sucesso",
+    createdDescription: "Veja seu incidente na página de listagem.",
+    createErrorTitle: "Erro ao criar incidente",
+    createErrorDescription: "Não foi possível criar o incidente",
+    notFoundTitle: "Incidente não encontrado",
+    notFoundDescription: "Verifique se a URL está correta e tente novamente.",
+  },
   common: {
     unexpectedErrorTitle: "Unexpected error",
     unexpectedErrorDescription:

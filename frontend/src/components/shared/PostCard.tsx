@@ -11,7 +11,7 @@ interface PostCardProps {
 }
 export function PostCard({ post }: PostCardProps) {
   return (
-    <Link to={`/post/${post.id}`}>
+    <Link to={`/incident/${post.id}`}>
       <Card className="space-y-4">
         <AuthorOverview
           name={post.user.name}

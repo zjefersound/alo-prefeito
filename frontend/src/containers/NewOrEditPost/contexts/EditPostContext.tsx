@@ -153,7 +153,7 @@ export const EditPostProvider = ({ children }: EditPostProviderProps) => {
         <div className="p-8">
           <Alert color="warning">
             You're not the owner of this post.{" "}
-            <Link to={`/post/${id}`} className="underline">
+            <Link to={`/incident/${id}`} className="underline">
               Go back to the post.
             </Link>
           </Alert>
@@ -169,7 +169,7 @@ export const EditPostProvider = ({ children }: EditPostProviderProps) => {
               Get a coffe, check the URL then try again 😉
             </span>
           </Text>
-          <GoBack to={`/post/${id}`} />
+          <GoBack to={`/incident/${id}`} />
         </Empty>
       )}
       {post?.user.id === user?.id && children}

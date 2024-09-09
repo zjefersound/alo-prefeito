@@ -13,9 +13,8 @@ import { Home } from "../pages/Home";
 import { Signup } from "../pages/Signup";
 import { Post } from "../pages/Post";
 import { Categories } from "../pages/Categories";
-import { NewPost } from "../pages/NewPost";
 import { Search } from "../pages/Search";
-import { EditPost } from "../pages/EditPost";
+import { NewIncident } from "../pages/NewIncident";
 
 const routes: { [key: string]: RouteObject[] } = {
   protected: [
@@ -32,16 +31,12 @@ const routes: { [key: string]: RouteObject[] } = {
       element: <Categories />,
     },
     {
-      path: "/new-post",
-      element: <NewPost />,
+      path: "/new-incident",
+      element: <NewIncident />,
     },
     {
-      path: "/post/:id",
+      path: "/incident/:id",
       element: <Post />,
-    },
-    {
-      path: "/post/:id/edit",
-      element: <EditPost />,
     },
     {
       path: "/search",
