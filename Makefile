@@ -13,7 +13,6 @@ seed:
 # Run backend tasks
 backend:
 	cd backend && \
-	mkdir uploads && \
 	npm install && \
 	npx prisma migrate dev && \
 	npm run dev
