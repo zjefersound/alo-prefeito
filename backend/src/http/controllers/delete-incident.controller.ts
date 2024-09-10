@@ -12,7 +12,7 @@ import {
 
 @Authorization('delete', 'incident')
 @Controller('/incidents/:incidentId')
-export class DeleteIncidenController {
+export class DeleteIncidentController {
   constructor(private prisma: PrismaService) {}
 
   @Delete()

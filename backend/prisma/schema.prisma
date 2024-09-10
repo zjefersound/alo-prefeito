@@ -62,7 +62,9 @@ model Attachment {
   type      String
   createdAt DateTime @default(now()) @map("created_at")
 
-  incidentId String @map("incident_id")
+  incidentId String? @map("incident_id")
 
-  incident Incident @relation(fields: [incidentId], references: [id])
+  incident Incident? @relation(fields: [incidentId], references: [id])
+
+  @@map("attachments")
 }

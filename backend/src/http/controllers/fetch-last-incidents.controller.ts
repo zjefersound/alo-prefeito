@@ -27,6 +27,11 @@ export class FetchLastIncidentsController {
           },
         },
         createdAt: true,
+        attachments: {
+          select: {
+            url: true,
+          },
+        },
       },
     })
 
