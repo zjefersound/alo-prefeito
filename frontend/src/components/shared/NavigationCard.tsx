@@ -1,7 +1,6 @@
 import {
   MdOutlineHome,
   MdOutlineLibraryBooks,
-  MdOutlineMilitaryTech,
 } from "react-icons/md";
 import { Card } from "../ui/Card";
 import { Link } from "react-router-dom";
