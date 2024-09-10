@@ -1,9 +1,8 @@
+import { PrismaService } from '@/database/prisma.service'
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
-import { authorizationKey } from '../decorators/authorization.decorator'
 import { getUserPermissions } from '../authorization/get-user-permissions'
-import { PrismaService } from '@/database/prisma.service'
-import { incidentSchema } from '../authorization/models/incident'
+import { authorizationKey } from '../decorators/authorization.decorator'
 
 @Injectable()
 export class AuthorizationGuard implements CanActivate {
@@ -39,24 +38,6 @@ export class AuthorizationGuard implements CanActivate {
     const { action, subject } = metadata
 
     const { can } = getUserPermissions(userId, role)
-
-    if (role === 'CITIZEN' && subject === 'incident' && action === 'delete') {
-      const { incidentId } = request.params
-
-      const incident = await this.prisma.incident.findUnique({
-        where: {
-          id: incidentId,
-        },
-      })
-
-      if (!incident) {
-        return false
-      }
-
-      const schema = incidentSchema.parse(incident)
-
-      return can(action, schema)
-    }
 
     return can(action, subject)
   }

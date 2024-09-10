@@ -12,6 +12,7 @@ const bodySchema = z.object({
   content: z.string().min(1),
   latitude: z.number().refine((value) => Math.abs(value) <= 180),
   longitude: z.number().refine((value) => Math.abs(value) <= 90),
+  attachmentsIds: z.string().array().min(0).max(3),
 })
 
 const bodyValidationPipe = new ZodValidationPipe(bodySchema)
@@ -28,7 +29,8 @@ export class RegisterIncidentController {
     @User() user: UserPayload,
     @Body(bodyValidationPipe) body: BodySchema,
   ) {
-    const { content, latitude, longitude, title, categoryId } = body
+    const { content, latitude, longitude, title, categoryId, attachmentsIds } =
+      body
 
     const category = await this.prisma.category.findUnique({
       where: {
@@ -40,7 +42,7 @@ export class RegisterIncidentController {
       throw new NotFoundException('Categoria não encontrada')
     }
 
-    await this.prisma.incident.create({
+    const { id } = await this.prisma.incident.create({
       data: {
         content,
         latitude,
@@ -50,5 +52,18 @@ export class RegisterIncidentController {
         categoryId: category.id,
       },
     })
+
+    await Promise.all(
+      attachmentsIds.map((attachmentId) => {
+        return this.prisma.attachment.update({
+          data: {
+            incidentId: id,
+          },
+          where: {
+            id: attachmentId,
+          },
+        })
+      }),
+    )
   }
 }

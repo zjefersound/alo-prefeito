@@ -3,7 +3,12 @@
 # Run database
 db:
 	cd backend && \
-	docker compose up 
+	docker compose up -d 
+
+# Run database seed
+seed:
+	cd backend && \
+	npm run seed:dev
 
 # Run backend tasks
 backend:

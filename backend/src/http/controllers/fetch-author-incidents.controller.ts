@@ -46,6 +46,11 @@ export class FetchAuthorIncidentsController {
             },
           },
           createdAt: true,
+          attachments: {
+            select: {
+              url: true,
+            },
+          },
         },
       }),
       this.prisma.incident.count({

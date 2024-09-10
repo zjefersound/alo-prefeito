@@ -5,12 +5,14 @@ import { AuthenticateUserController } from './controllers/authenticate-user.cont
 import { CreateCategoryController } from './controllers/create-category.controller'
 import { FetchCategoriesController } from './controllers/fetch-categories.controller'
 import { RegisterIncidentController } from './controllers/register-incident.controller'
-import { DeleteIncidenController } from './controllers/delete-incident.controller'
+import { DeleteIncidentController } from './controllers/delete-incident.controller'
 import { FetchAllIncidentsController } from './controllers/fetch-all-incidents.controller'
 import { FetchAuthorIncidentsController } from './controllers/fetch-author-incidents.controller'
 import { FetchLastIncidentsController } from './controllers/fetch-last-incidents.controller'
 import { GetUserProfileController } from './controllers/get-user-profile.controller'
 import { UpdateUserProfileController } from './controllers/update-user-profile.controller'
+import { UploadAttachmentsController } from './controllers/upload-attachments.controller'
+import { GetIncidentController } from './controllers/get-incident.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -20,12 +22,14 @@ import { UpdateUserProfileController } from './controllers/update-user-profile.c
     CreateCategoryController,
     FetchCategoriesController,
     RegisterIncidentController,
-    DeleteIncidenController,
+    DeleteIncidentController,
     FetchAllIncidentsController,
     FetchAuthorIncidentsController,
     FetchLastIncidentsController,
     GetUserProfileController,
     UpdateUserProfileController,
+    UploadAttachmentsController,
+    GetIncidentController,
   ],
 })
 export class HttpModule {}

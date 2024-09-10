@@ -1,19 +1,15 @@
 import { Public } from '@/auth/decorators/public.decorator'
 import { PrismaService } from '@/database/prisma.service'
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, NotFoundException, Param } from '@nestjs/common'
 
 @Public()
-@Controller('/incidents/latest')
-export class FetchLastIncidentsController {
+@Controller('/incidents/:id')
+export class GetIncidentController {
   constructor(private prisma: PrismaService) {}
 
   @Get()
-  async execute() {
-    const incidents = await this.prisma.incident.findMany({
-      take: 5,
-      orderBy: {
-        createdAt: 'desc',
-      },
+  async execute(@Param('id') incidentId: string) {
+    const incident = await this.prisma.incident.findFirst({
       select: {
         id: true,
         title: true,
@@ -33,10 +29,17 @@ export class FetchLastIncidentsController {
           },
         },
       },
+      where: {
+        id: incidentId,
+      },
     })
 
+    if (!incident) {
+      throw new NotFoundException('Incidente não encontrado')
+    }
+
     return {
-      incidents,
+      incident,
     }
   }
 }
