@@ -40,6 +40,11 @@
   color: var(--agorium-50);
 }
 
+html {
+  height: 100dvh;
+  overflow: hidden;
+}
+
 * {
   scrollbar-color: var(--agorium-900) var(--agorium-900);
   scrollbar-width: thin;
@@ -77,4 +82,17 @@
 
 /* 2xl */
 @media (min-width: 1536px) {
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-pane {
+  z-index: 0 !important;
+}
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 9 !important;
 }

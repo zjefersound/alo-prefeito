@@ -7,7 +7,7 @@ import { useNewIncident } from "../hooks/useNewIncident";
 export function NewIncidentEditor() {
   const { initialContent, errors, handleChangeContent } = useNewIncident();
   return (
-    <div className="flex flex-col space-y-6 h-[calc(var(--content-height)-var(--main-content-padding-x)-var(--main-content-padding-x))]">
+    <div className="flex flex-col space-y-6 ">
       <div className="flex items-center">
         <GoBack to="/" hideText />
         <Heading size="lg" asChild>
@@ -19,7 +19,7 @@ export function NewIncidentEditor() {
       <TextEditor
         markdown={initialContent}
         placeholder="Relate seu problema e ajude a melhorar sua cidade"
-        className="flex flex-col flex-1"
+        className="flex flex-col flex-1 max-h-[400px]"
         onChange={handleChangeContent}
       />
     </div>

@@ -106,7 +106,10 @@ export const NewIncidentProvider = ({ children }: NewIncidentProviderProps) => {
   );
 
   const visibleFields = useMemo(
-    () => serializedFields.filter((field) => field.id !== "content"),
+    () =>
+      serializedFields.filter(
+        (field) => !["content", "latitude", "longitude"].includes(field.id)
+      ),
     []
   );
 
@@ -116,6 +119,24 @@ export const NewIncidentProvider = ({ children }: NewIncidentProviderProps) => {
     localStorage.setItem("incidentDraft", JSON.stringify(data));
     setDraftSavedAt(new Date());
   }, [data]);
+
+  useEffect(() => {
+    if (draft !== undefined) return;
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        handleChangeValue(String(latitude), "latitude");
+        handleChangeValue(String(longitude), "longitude");
+      },
+      (error) => {
+        console.error("Geolocation error:", error);
+        // Example coordinates (Videira)
+        handleChangeValue(String(-27.0127149), "latitude");
+        handleChangeValue(String(-51.1714452), "longitude");
+      }
+    );
+  }, [draft]);
 
   const values = useMemo(
     () => ({

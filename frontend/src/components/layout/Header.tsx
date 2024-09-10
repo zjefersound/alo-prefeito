@@ -7,6 +7,7 @@ import { Avatar } from "../ui/Avatar";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "../ui/Button";
+import { Menu } from "../ui/Menu";
 
 export function Header() {
   const { user } = useAuth();
@@ -43,7 +44,7 @@ export function Header() {
             <MdAdd className="size-6 mr-2" /> Create
           </Button>
         </Link>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 max-sm:hidden">
           <Avatar name={user!.name} />
           <p
             title={user!.name}
@@ -52,6 +53,12 @@ export function Header() {
             {printFirstAndLastName(user!.name)}
           </p>
         </div>
+        <Link to="/new-incident" className="mr-3 max-md:flex hidden">
+          <Button size="sm">
+            <MdAdd className="size-6" />
+          </Button>
+        </Link>
+        <Menu />
       </div>
     </header>
   );
