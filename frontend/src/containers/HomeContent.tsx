@@ -29,10 +29,10 @@ export function HomeContent() {
     return (
       <Empty>
         <p className="to-amber-100 font-bold mb-3 text-center">
-          No posts were found
+          Nenhum incidente encontrado
         </p>
         <Text asChild>
-          <span className="text-center">Start by creating yours!</span>
+          <span className="text-center">Seja o primeiro a relatar e ajudar sua cidade</span>
         </Text>
       </Empty>
     );
@@ -62,7 +62,7 @@ export function HomeContent() {
           className="m-auto"
           color="secondary"
         >
-          Load more
+          Carregar mais
         </Button>
       )}
     </div>
