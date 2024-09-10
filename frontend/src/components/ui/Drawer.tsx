@@ -41,11 +41,12 @@ DrawerHeader.displayName = "Drawer.Header";
 
 interface DrawerHamburgerProps {
   setOpen: (open: boolean) => void;
+  className?: string;
 }
 
-function DrawerHamburger({ setOpen }: DrawerHamburgerProps) {
+function DrawerHamburger({ setOpen, className }: DrawerHamburgerProps) {
   return (
-    <div className="ml-auto">
+    <div className={clsx("ml-auto", className)}>
       <button onClick={() => setOpen(true)}>
         <PiList className="h-8 w-8 text-orange-300" />
       </button>

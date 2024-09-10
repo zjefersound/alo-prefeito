@@ -4,20 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import { printFirstAndLastName } from "../../utils/printFirstAndLastName";
 import { Avatar } from "./Avatar";
-import { MdOutlineHome, MdOutlineLibraryBooks } from "react-icons/md";
-
-const defaultMenus = [
-  {
-    path: "/",
-    Icon: MdOutlineHome,
-    label: "Home",
-  },
-  {
-    path: "/rides",
-    Icon: MdOutlineLibraryBooks,
-    label: "Categorias",
-  },
-];
+import { NAVIGATION_ITEMS } from "../shared/NavigationCard";
 
 export function Menu() {
   const { user } = useAuth();
@@ -25,7 +12,7 @@ export function Menu() {
 
   return (
     <>
-      <Drawer.Hamburger setOpen={setOpen} />
+      <Drawer.Hamburger setOpen={setOpen} className="max-md:flex hidden" />
       <Drawer.Root open={open}>
         <Drawer.Header setOpen={setOpen} />
         <Link
@@ -41,7 +28,7 @@ export function Menu() {
           </div>
         </Link>
         <div className="py-4 flex flex-col flex-1 overflow-y-auto">
-          {defaultMenus.map((menu) => (
+          {NAVIGATION_ITEMS.map((menu) => (
             <Link
               key={menu.path}
               to={menu.path}

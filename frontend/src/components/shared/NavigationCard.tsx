@@ -5,7 +5,7 @@ import {
 import { Card } from "../ui/Card";
 import { Link } from "react-router-dom";
 
-const NAVIGATION_ITEMS = [
+export const NAVIGATION_ITEMS = [
   {
     path: "/",
     Icon: MdOutlineHome,
@@ -14,7 +14,7 @@ const NAVIGATION_ITEMS = [
   {
     path: "/categories",
     Icon: MdOutlineLibraryBooks,
-    label: "Categories",
+    label: "Categorias",
   },
 ];
 
