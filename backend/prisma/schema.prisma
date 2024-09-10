@@ -41,7 +41,7 @@ model Category {
 model Incident {
   id        String   @id @default(uuid(7))
   title     String
-  content   String
+  content   String   @db.LongText
   latitude  Float
   longitude Float
   createdAt DateTime @default(now()) @map("created_at")
