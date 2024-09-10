@@ -7,13 +7,18 @@ import { Skeleton } from "../components/ui/Skeleton";
 import { IncidentCardSkeleton } from "../components/shared/skeletons/IncidentCardSkeleton";
 import { Button } from "../components/ui/Button";
 import { useIncidents } from "../hooks/useIncidents";
-import { useState } from "react";
 import { IncidentCard } from "../components/shared/IncidentCard";
 
 export function HomeContent() {
-  const [page, setPage] = useState(1);
-  const { data, isPending, isLoading, currentPage, total, perPage } =
-    useIncidents(page, 10);
+  const {
+    data,
+    isPending,
+    isLoading,
+    currentPage,
+    fetchNextPage,
+    total,
+    perPage,
+  } = useIncidents(5);
 
   if (isPending && currentPage === 1) {
     return (
@@ -32,7 +37,9 @@ export function HomeContent() {
           Nenhum incidente encontrado
         </p>
         <Text asChild>
-          <span className="text-center">Seja o primeiro a relatar e ajudar sua cidade</span>
+          <span className="text-center">
+            Seja o primeiro a relatar e ajudar sua cidade
+          </span>
         </Text>
       </Empty>
     );
@@ -58,7 +65,7 @@ export function HomeContent() {
       ))}
       {currentPage < Math.ceil(total / perPage) && (
         <Button
-          onClick={() => setPage((p) => p + 1)}
+          onClick={() => fetchNextPage()}
           className="m-auto"
           color="secondary"
         >

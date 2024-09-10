@@ -3,9 +3,8 @@ import { IPaginatedResponse } from "../models/IPaginatedResponse";
 import { api } from "./api";
 
 const path = "/incidents";
-interface IncidentsResponse extends IPaginatedResponse {
+export interface IncidentsResponse extends IPaginatedResponse {
   incidents: Incident[];
-  totalCount: number;
 }
 
 export type IncidentPayload = {
