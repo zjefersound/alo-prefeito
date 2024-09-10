@@ -1,6 +1,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { incidentService } from "../services/incidentService";
 import { Incident } from "../models/Incident";
+import { useMemo } from "react";
 
 export function useIncidents(perPage = 10) {
   const query = useInfiniteQuery({
@@ -11,12 +12,17 @@ export function useIncidents(perPage = 10) {
     getNextPageParam: (_, pages) => pages.length + 1,
   });
 
-  return {
-    data:
+  const data = useMemo(
+    () =>
       query.data?.pages.reduce(
         (list, group) => [...list, ...group.incidents],
         [] as Incident[]
       ) || [],
+    [query.data]
+  );
+
+  return {
+    data,
     total: query.data?.pages[0].totalCount || 0,
     isPending: query.isPending,
     isLoading: query.isLoading,
