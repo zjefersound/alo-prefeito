@@ -62,6 +62,7 @@ export const NewIncidentProvider = ({ children }: NewIncidentProviderProps) => {
       categoryId: data.categoryId,
       latitude: Number(data.latitude),
       longitude: Number(data.longitude),
+      attachmentsIds: [],
     };
     incidentService
       .create(payload)
@@ -78,7 +79,7 @@ export const NewIncidentProvider = ({ children }: NewIncidentProviderProps) => {
           color: "danger",
           title: TOAST_MESSAGES.Incident.createErrorTitle,
           description:
-            typeof error.response?.data?.message ||
+            error.response?.data?.message ||
             TOAST_MESSAGES.Incident.createErrorDescription,
         });
       });

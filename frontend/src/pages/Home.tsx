@@ -1,8 +1,7 @@
 import { Content } from "../components/layout/Content";
 import { NavigationCard } from "../components/shared/NavigationCard";
 import { PopularItemCard } from "../components/shared/PopularItemCard";
-import { mockedPosts } from "../examples/mocks/mocks";
-import { PostCard } from "../components/shared/PostCard";
+import { HomeContent } from "../containers/HomeContent";
 
 export function Home() {
   return (
@@ -22,11 +21,7 @@ export function Home() {
         />
       </Content.Sidebar>
       <Content.Main>
-        <div className="flex flex-col space-y-6">
-          {mockedPosts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
+        <HomeContent />
       </Content.Main>
     </Content.Root>
   );
