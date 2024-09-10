@@ -12,6 +12,7 @@ import { FetchLastIncidentsController } from './controllers/fetch-last-incidents
 import { GetUserProfileController } from './controllers/get-user-profile.controller'
 import { UpdateUserProfileController } from './controllers/update-user-profile.controller'
 import { UploadAttachmentsController } from './controllers/upload-attachments.controller'
+import { GetIncidentController } from './controllers/get-incident.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -28,6 +29,7 @@ import { UploadAttachmentsController } from './controllers/upload-attachments.co
     GetUserProfileController,
     UpdateUserProfileController,
     UploadAttachmentsController,
+    GetIncidentController,
   ],
 })
 export class HttpModule {}
