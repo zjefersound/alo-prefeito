@@ -4,48 +4,48 @@ export const incidentFields: FieldConfig[] = [
   {
     id: "title",
     type: "text",
-    label: "Add a title",
-    placeholder: "Your creative title",
+    label: "Título",
+    placeholder: "Escreva o título",
     required: true,
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "Title is required",
+        message: "Título é obrigatório",
       },
       {
         rule: (value) => value.length <= 100,
-        message: "Title must be 100 characters or less",
+        message: "Título deve conter 100 caracteres ou menos",
       },
     ],
   },
   {
     id: "categoryId",
     type: "select",
-    label: "Add a category",
-    placeholder: "Select the category",
+    label: "Categoria",
+    placeholder: "Selecione a categoria",
     required: true,
     fetchOptionsFromApi: true,
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "Category is required",
+        message: "Categoria é obrigatória",
       },
     ],
   },
   {
     id: "content",
     type: "text",
-    label: "Content",
-    placeholder: "Enter the content",
+    label: "Conteúdo",
+    placeholder: "Escreva o conteúdo",
     required: true,
     validations: [
       {
         rule: (value) => value.trim() !== "",
-        message: "Content is required",
+        message: "Conteúdo é obrigatório",
       },
       {
         rule: (value) => value.length >= 30,
-        message: "Content must be at least 30 characters long",
+        message: "Conteúdo deve ter pelo menos 30 caractéres",
       },
     ],
   },
