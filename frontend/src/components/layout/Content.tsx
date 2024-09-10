@@ -37,7 +37,7 @@ ContentMain.displayName = "Content.Main";
 // eslint-disable-next-line react-refresh/only-export-components
 function ContentSidebar({ children }: { children: ReactNode }) {
   return (
-    <div className="hidden md:block space-y-6 py-6 sticky top-0 h-[var(--content-height)] overflow-auto">
+    <div className="max-md:first:hidden md:block space-y-6 py-6 md:sticky md:top-0 md:h-[var(--content-height)] md:overflow-auto">
       {children}
     </div>
   );

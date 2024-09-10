@@ -53,6 +53,11 @@ export function Header() {
             {printFirstAndLastName(user!.name)}
           </p>
         </div>
+        <Link to="/new-incident" className="mr-3">
+          <Button size="sm">
+            <MdAdd className="size-6" />
+          </Button>
+        </Link>
         <Menu />
       </div>
     </header>

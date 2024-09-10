@@ -19,7 +19,7 @@ export function NewIncidentEditor() {
       <TextEditor
         markdown={initialContent}
         placeholder="Relate seu problema e ajude a melhorar sua cidade"
-        className="flex flex-col flex-1"
+        className="flex flex-col flex-1 max-h-[700px]"
         onChange={handleChangeContent}
       />
     </div>
