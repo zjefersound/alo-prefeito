@@ -11,7 +11,7 @@ import { Layout } from "../components/layout/Layout";
 import { Login } from "../pages/Login";
 import { Home } from "../pages/Home";
 import { Signup } from "../pages/Signup";
-import { Post } from "../pages/Post";
+import { IncidentPage } from "../pages/IncidentPage";
 import { Categories } from "../pages/Categories";
 import { Search } from "../pages/Search";
 import { NewIncident } from "../pages/NewIncident";
@@ -36,7 +36,7 @@ const routes: { [key: string]: RouteObject[] } = {
     },
     {
       path: "/incident/:id",
-      element: <Post />,
+      element: <IncidentPage />,
     },
     {
       path: "/search",

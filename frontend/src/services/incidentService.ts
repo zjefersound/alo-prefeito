@@ -26,6 +26,10 @@ function getAll({ page, perPage }: PaginatedOptions) {
   return api.get<IncidentsResponse>(path, { params: { page, perPage } });
 }
 
+function getById(id: string) {
+  return api.get<{ incident: Incident }>(`${path}/${id}`);
+}
+
 function getLatestIncidents() {
   return api.get<IncidentsResponse>(`${path}/latest`);
 }
@@ -42,6 +46,7 @@ export const incidentService = {
   create,
   delete: deleteIncident,
   getAll,
+  getById,
   getIncidentsFromUser,
   getLatestIncidents,
 };

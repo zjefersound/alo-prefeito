@@ -8,4 +8,5 @@ export type Incident = {
 	category: Category;
 	latitude: number;
 	longitude: number;
+	createdAt: string;
 }
