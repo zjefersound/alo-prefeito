@@ -16,6 +16,7 @@ import { GetIncidentController } from './controllers/get-incident.controller'
 import { RegisterApiKeyController } from './controllers/register-api-key.controller'
 import { FetchApiKeysController } from './controllers/fetch-api-keys.controller'
 import { CancelApiKeyController } from './controllers/cancel-api-key.controller'
+import { FetchApiIncidentsController } from './controllers/fetch-api-incidents.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -32,10 +33,11 @@ import { CancelApiKeyController } from './controllers/cancel-api-key.controller'
     GetUserProfileController,
     UpdateUserProfileController,
     UploadAttachmentsController,
-    GetIncidentController,
     RegisterApiKeyController,
     FetchApiKeysController,
     CancelApiKeyController,
+    FetchApiIncidentsController,
+    GetIncidentController,
   ],
 })
 export class HttpModule {}
