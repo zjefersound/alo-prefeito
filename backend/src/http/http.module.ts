@@ -13,6 +13,7 @@ import { GetUserProfileController } from './controllers/get-user-profile.control
 import { UpdateUserProfileController } from './controllers/update-user-profile.controller'
 import { UploadAttachmentsController } from './controllers/upload-attachments.controller'
 import { GetIncidentController } from './controllers/get-incident.controller'
+import { RegisterApiKeyController } from './controllers/register-api-key.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -30,6 +31,7 @@ import { GetIncidentController } from './controllers/get-incident.controller'
     UpdateUserProfileController,
     UploadAttachmentsController,
     GetIncidentController,
+    RegisterApiKeyController,
   ],
 })
 export class HttpModule {}

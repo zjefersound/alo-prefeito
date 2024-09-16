@@ -10,11 +10,13 @@ import { categorySubject } from './subjects/category'
 import { incidentSubject } from './subjects/incident'
 import { permissions } from './permissions'
 import { userSubject } from './subjects/user'
+import { keySubject } from './subjects/key'
 
 const appAbilitiesSchema = z.union([
   categorySubject,
   incidentSubject,
   userSubject,
+  keySubject,
   z.tuple([z.literal('manage'), z.literal('all')]),
 ])
 

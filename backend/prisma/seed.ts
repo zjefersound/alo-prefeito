@@ -59,6 +59,17 @@ async function seed() {
           '$2a$08$wfZXJhPhBuAhXuRstC2UJ.eLIg57EPHs/V/dBFxKfmiNCkxeA.gX2',
       },
     }),
+    prisma.user.create({
+      data: {
+        role: 'API',
+        cpf: '222.222.222-22',
+        name: 'API 01',
+        email: 'api@gmail.com',
+        phone: '49333333333',
+        passwordHash:
+          '$2a$08$lKaBjKEbDfJhQ.Fc2oyAGOjv4iUabEe0CemKizjaoT5vKnyNioQIG',
+      },
+    }),
   ])
 }
 

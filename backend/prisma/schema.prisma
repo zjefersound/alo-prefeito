@@ -24,6 +24,7 @@ model User {
   role         Role     @default(CITIZEN)
 
   incidents Incident[]
+  keys      Key[]
 
   @@map("users")
 }
@@ -67,4 +68,16 @@ model Attachment {
   incident Incident? @relation(fields: [incidentId], references: [id])
 
   @@map("attachments")
+}
+
+model Key {
+  id        String   @id @default(uuid(7))
+  keyHash   String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  userId String @map("user_id")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("keys")
 }
