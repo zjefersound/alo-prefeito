@@ -6,6 +6,8 @@ import {
   Controller,
   Delete,
   ForbiddenException,
+  HttpCode,
+  HttpStatus,
   NotFoundException,
   Param,
 } from '@nestjs/common'
@@ -16,6 +18,7 @@ export class DeleteIncidentController {
   constructor(private prisma: PrismaService) {}
 
   @Delete()
+  @HttpCode(HttpStatus.NO_CONTENT)
   async execute(
     @User() { sub: userId }: UserPayload,
     @Param('incidentId') incidentId: string,

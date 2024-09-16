@@ -15,6 +15,7 @@ import { UploadAttachmentsController } from './controllers/upload-attachments.co
 import { GetIncidentController } from './controllers/get-incident.controller'
 import { RegisterApiKeyController } from './controllers/register-api-key.controller'
 import { FetchApiKeysController } from './controllers/fetch-api-keys.controller'
+import { CancelApiKeyController } from './controllers/cancel-api-key.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -34,6 +35,7 @@ import { FetchApiKeysController } from './controllers/fetch-api-keys.controller'
     GetIncidentController,
     RegisterApiKeyController,
     FetchApiKeysController,
+    CancelApiKeyController,
   ],
 })
 export class HttpModule {}

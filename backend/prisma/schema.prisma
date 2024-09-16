@@ -71,9 +71,10 @@ model Attachment {
 }
 
 model Key {
-  id        String   @id @default(uuid(7))
-  keyHash   String
-  createdAt DateTime @default(now()) @map("created_at")
+  id         String    @id @default(uuid(7))
+  keyHash    String
+  canceledAt DateTime?
+  createdAt  DateTime  @default(now()) @map("created_at")
 
   userId String @map("user_id")
 

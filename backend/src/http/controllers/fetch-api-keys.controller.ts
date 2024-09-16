@@ -32,6 +32,7 @@ export class FetchApiKeysController {
         skip,
         select: {
           id: true,
+          canceledAt: true,
           createdAt: true,
         },
         where: {
