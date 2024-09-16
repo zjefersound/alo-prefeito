@@ -1,6 +1,7 @@
 import { Content } from "../components/layout/Content";
 import { NavigationCard } from "../components/shared/NavigationCard";
 import { PopularItemCard } from "../components/shared/PopularItemCard";
+import { TrendingPosts } from "../components/shared/TrendingPosts";
 import { HomeContent } from "../containers/HomeContent";
 
 export function Home() {
@@ -23,6 +24,9 @@ export function Home() {
       <Content.Main>
         <HomeContent />
       </Content.Main>
+      <Content.Sidebar>
+        <TrendingPosts />
+      </Content.Sidebar>
     </Content.Root>
   );
 }
