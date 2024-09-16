@@ -1,3 +1,3 @@
 export interface IPaginatedResponse {
-  totalCound: number;
+  totalCount: number;
 }
