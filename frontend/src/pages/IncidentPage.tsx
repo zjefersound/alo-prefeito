@@ -88,9 +88,7 @@ export function IncidentPage() {
         </Card>
       </Content.Main>
       <Content.Sidebar>
-        <TrendingPosts
-          posts={[mockedPosts[0], mockedPosts[1], mockedPosts[2]]}
-        />
+        <TrendingPosts />
       </Content.Sidebar>
     </Content.Root>
   );
