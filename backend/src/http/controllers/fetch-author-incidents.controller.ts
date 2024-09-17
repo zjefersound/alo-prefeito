@@ -33,6 +33,9 @@ export class FetchAuthorIncidentsController {
         where: {
           authorId: user.sub,
         },
+        orderBy: {
+          createdAt: 'desc',
+        },
         select: {
           id: true,
           title: true,

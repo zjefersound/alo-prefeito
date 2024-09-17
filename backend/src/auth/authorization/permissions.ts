@@ -32,5 +32,9 @@ export const permissions: Record<Role, PermissionsByRole> = {
     can('update', 'user')
 
     can('fetch', 'incident')
+
+    can('register', 'key')
+    can('cancel', 'key')
+    can('fetch', 'key')
   },
 }

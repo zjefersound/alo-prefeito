@@ -13,6 +13,10 @@ import { GetUserProfileController } from './controllers/get-user-profile.control
 import { UpdateUserProfileController } from './controllers/update-user-profile.controller'
 import { UploadAttachmentsController } from './controllers/upload-attachments.controller'
 import { GetIncidentController } from './controllers/get-incident.controller'
+import { RegisterApiKeyController } from './controllers/register-api-key.controller'
+import { FetchApiKeysController } from './controllers/fetch-api-keys.controller'
+import { CancelApiKeyController } from './controllers/cancel-api-key.controller'
+import { FetchApiIncidentsController } from './controllers/fetch-api-incidents.controller'
 
 @Module({
   imports: [DatabaseModule],
@@ -29,6 +33,10 @@ import { GetIncidentController } from './controllers/get-incident.controller'
     GetUserProfileController,
     UpdateUserProfileController,
     UploadAttachmentsController,
+    RegisterApiKeyController,
+    FetchApiKeysController,
+    CancelApiKeyController,
+    FetchApiIncidentsController,
     GetIncidentController,
   ],
 })
