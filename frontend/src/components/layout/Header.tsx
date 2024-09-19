@@ -32,7 +32,7 @@ export function Header() {
           <MdOutlineSearch />
         </TextInput.Icon>
         <TextInput.Input
-          placeholder="Search Agorium..."
+          placeholder="Pesquise no Fala Cidade"
           value={searchText}
           onChange={handleSearchChange}
           onKeyDown={handleSearchSubmit}
