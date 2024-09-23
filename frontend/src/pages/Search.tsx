@@ -1,7 +1,5 @@
 import { Content } from "../components/layout/Content";
 import { NavigationCard } from "../components/shared/NavigationCard";
-import { PopularItemCard } from "../components/shared/PopularItemCard";
-import { TrendingPosts } from "../components/shared/TrendingPosts";
 import { mockedPosts } from "../examples/mocks/mocks";
 import { PostCard } from "../components/shared/PostCard";
 import { ButtonGroup } from "../components/ui/ButtonGroup";
@@ -50,11 +48,6 @@ export function Search() {
           ))}
         </div>
       </Content.Main>
-      <Content.Sidebar>
-        <TrendingPosts
-          posts={[mockedPosts[0], mockedPosts[1], mockedPosts[2]]}
-        />
-      </Content.Sidebar>
     </Content.Root>
   );
 }

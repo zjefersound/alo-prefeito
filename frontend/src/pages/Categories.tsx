@@ -57,11 +57,6 @@ export function Categories() {
           ))}
         </div>
       </Content.Main>
-      <Content.Sidebar>
-        <TrendingPosts
-          posts={[mockedPosts[0], mockedPosts[1], mockedPosts[2]]}
-        />
-      </Content.Sidebar>
     </Content.Root>
   );
 }

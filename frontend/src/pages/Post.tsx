@@ -1,15 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import { Content } from "../components/layout/Content";
 import { NavigationCard } from "../components/shared/NavigationCard";
-import { PopularItemCard } from "../components/shared/PopularItemCard";
 import { SimpleUserCard } from "../components/shared/SimpleUserCard";
-import { TrendingPosts } from "../components/shared/TrendingPosts";
 import { mockedPosts } from "../examples/mocks/mocks";
 import { Card } from "../components/ui/Card";
 import { Avatar } from "../components/ui/Avatar";
 import { formatDistance } from "date-fns";
 import { Text } from "../components/ui/Text";
-import { Tag } from "../components/ui/Tag";
 import { Heading } from "../components/ui/Heading";
 import { Button } from "../components/ui/Button";
 import {
@@ -127,9 +124,6 @@ export function Post() {
           rankingPosition={12}
           totalPosts={32}
           totalUpvotes={642123}
-        />
-        <TrendingPosts
-          posts={[mockedPosts[0], mockedPosts[1], mockedPosts[2]]}
         />
       </Content.Sidebar>
     </Content.Root>
